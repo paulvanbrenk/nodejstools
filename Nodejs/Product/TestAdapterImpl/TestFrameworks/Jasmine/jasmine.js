@@ -92,7 +92,7 @@ function enumerateSpecs(suite, testList, testFile) {
             enumerateSpecs(child, testList, testFile);
         } else {
             testList.push({
-                test: child.getSpecName(child),
+                test: child.getFullName(),
                 suite: suite.description,
                 file: testFile,
                 line: 0,
