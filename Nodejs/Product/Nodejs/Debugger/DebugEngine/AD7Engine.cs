@@ -541,13 +541,13 @@ namespace Microsoft.NodejsTools.Debugger.DebugEngine
                         {
                             case WaitOnAbnormalExitSetting:
                                 bool value;
-                                if (Boolean.TryParse(setting[1], out value) && value)
+                                if (bool.TryParse(setting[1], out value) && value)
                                 {
                                     debugOptions |= NodeDebugOptions.WaitOnAbnormalExit;
                                 }
                                 break;
                             case WaitOnNormalExitSetting:
-                                if (Boolean.TryParse(setting[1], out value) && value)
+                                if (bool.TryParse(setting[1], out value) && value)
                                 {
                                     debugOptions |= NodeDebugOptions.WaitOnNormalExit;
                                 }
@@ -1087,8 +1087,7 @@ namespace Microsoft.NodejsTools.Debugger.DebugEngine
                 var packageGuid = new Guid(Guids.NodejsPackageString);
                 shell.LoadPackage(ref packageGuid, out var package);
 
-                var nodejsPackage = package as NodejsPackage;
-                if (nodejsPackage != null)
+                if (package is NodejsPackage nodejsPackage)
                 {
                     this._trackFileChanges = nodejsPackage.GeneralOptionsPage.EditAndContinue;
 
@@ -1403,8 +1402,7 @@ namespace Microsoft.NodejsTools.Debugger.DebugEngine
         /// <returns>File names collection.</returns>
         private IEnumerable<string> EnumerateSolutionFiles()
         {
-            var solution = Package.GetGlobalService(typeof(SVsSolution)) as IVsSolution;
-            if (solution != null)
+            if (Package.GetGlobalService(typeof(SVsSolution)) is IVsSolution solution)
             {
                 foreach (var project in solution.EnumerateLoadedProjects(false))
                 {

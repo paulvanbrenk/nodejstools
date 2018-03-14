@@ -48,7 +48,6 @@ namespace Microsoft.VisualStudioTools.Project
         /// they provide us with this data.
         /// Returns/sets the [(<propName, propCondition>) <propValue>] collection
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists"), System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual List<KeyValuePair<KeyValuePair<string, string>, string>> NewConfigProperties { get; set; } = new List<KeyValuePair<KeyValuePair<string, string>, string>>();
 
         /// <summary>
@@ -582,7 +581,7 @@ namespace Microsoft.VisualStudioTools.Project
         /// <devremark>The platforms array is never null. It is assured by the callers.</devremark>
         internal static int GetPlatforms(uint celt, string[] names, uint[] actual, string[] platforms)
         {
-            Utilities.ArgumentNotNull("platforms", platforms);
+            Utilities.ArgumentNotNull(nameof(platforms), platforms);
             if (names == null)
             {
                 if (actual == null || actual.Length == 0)

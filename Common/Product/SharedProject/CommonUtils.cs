@@ -1,7 +1,6 @@
 // Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -66,7 +65,8 @@ namespace Microsoft.VisualStudioTools
             const string MdhaPrefix = "mdha:";
 
             // webkit debugger prepends with 'mdha'
-            if (path.StartsWith(MdhaPrefix, StringComparison.OrdinalIgnoreCase)) {
+            if (path.StartsWith(MdhaPrefix, StringComparison.OrdinalIgnoreCase))
+            {
                 path = path.Substring(MdhaPrefix.Length);
             }
 
@@ -606,82 +606,6 @@ namespace Microsoft.VisualStudioTools
         {
             return !string.IsNullOrEmpty(path) &&
                 path.IndexOfAny(InvalidPathChars) < 0;
-        }
-
-        /// <summary>
-        /// Recursively searches for a file using breadth-first-search. This
-        /// ensures that the result closest to <paramref name="root"/> is
-        /// returned first.
-        /// </summary>
-        /// <param name="root">
-        /// Directory to start searching.
-        /// </param>
-        /// <param name="file">
-        /// Filename to find. Wildcards are not supported.
-        /// </param>
-        /// <param name="depthLimit">
-        /// The number of subdirectories to search in.
-        /// </param>
-        /// <param name="firstCheck">
-        /// A sequence of subdirectories to prioritize.
-        /// </param>
-        /// <returns>
-        /// The path to the file if found, including <paramref name="root"/>;
-        /// otherwise, null.
-        /// </returns>
-        public static string FindFile(
-            string root,
-            string file,
-            int depthLimit = 2,
-            IEnumerable<string> firstCheck = null
-        )
-        {
-            var candidate = Path.Combine(root, file);
-            if (File.Exists(candidate))
-            {
-                return candidate;
-            }
-            if (firstCheck != null)
-            {
-                foreach (var subPath in firstCheck)
-                {
-                    candidate = Path.Combine(root, subPath, file);
-                    if (File.Exists(candidate))
-                    {
-                        return candidate;
-                    }
-                }
-            }
-
-            // Do a BFS of the filesystem to ensure we find the match closest to
-            // the root directory.
-            var dirQueue = new Queue<string>();
-            dirQueue.Enqueue(root);
-            dirQueue.Enqueue("<EOD>");
-            while (dirQueue.Any())
-            {
-                var dir = dirQueue.Dequeue();
-                if (dir == "<EOD>")
-                {
-                    depthLimit -= 1;
-                    if (depthLimit <= 0)
-                    {
-                        return null;
-                    }
-                    continue;
-                }
-                var result = Directory.EnumerateFiles(dir, file, SearchOption.TopDirectoryOnly).FirstOrDefault();
-                if (result != null)
-                {
-                    return result;
-                }
-                foreach (var subDir in Directory.EnumerateDirectories(dir))
-                {
-                    dirQueue.Enqueue(subDir);
-                }
-                dirQueue.Enqueue("<EOD>");
-            }
-            return null;
         }
 
         /// <summary>

@@ -1,4 +1,4 @@
-// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
+﻿// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 using System;
 using System.Collections;
@@ -127,7 +127,7 @@ namespace Microsoft.VisualStudioTools.Project
         #region IDataObject methods
         int IDataObject.DAdvise(FORMATETC[] e, uint adv, IAdviseSink sink, out uint cookie)
         {
-            Utilities.ArgumentNotNull("e", e);
+            Utilities.ArgumentNotNull(nameof(e), e);
 
             var sdata = new STATDATA();
 
@@ -225,7 +225,6 @@ namespace Microsoft.VisualStudioTools.Project
         internal static readonly ushort CF_VSPROJECTCLIPDESCRIPTOR;
 #pragma warning restore 414
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline")]
         static DragDropHelper()
         {
             CF_VSREFPROJECTITEMS = (ushort)UnsafeNativeMethods.RegisterClipboardFormat("CF_VSREFPROJECTITEMS");

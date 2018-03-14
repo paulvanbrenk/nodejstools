@@ -1,4 +1,4 @@
-// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
+﻿// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 using System;
 using System.Diagnostics;
@@ -21,7 +21,7 @@ namespace Microsoft.VisualStudioTools.Project
         /// <param name="outputAssembly">MSBuild generated item corresponding to the output assembly (by default, these would be of type MainAssembly</param>
         public Output(ProjectNode projectManager, ProjectItemInstance outputAssembly)
         {
-            Utilities.ArgumentNotNull("projectManager", projectManager);
+            Utilities.ArgumentNotNull(nameof(projectManager), projectManager);
 
             this.project = projectManager;
             this.output = outputAssembly;
@@ -126,9 +126,8 @@ namespace Microsoft.VisualStudioTools.Project
 
             if (ErrorHandler.Succeeded(this.get_Property("TargetPath", out var variant)))
             {
-                var var = variant as String;
 
-                if (var != null)
+                if (variant is string var)
                 {
                     pbstrRelativePath = var;
                 }

@@ -64,9 +64,6 @@
     <Reference Include="Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="Microsoft.VisualStudio.Shell.Interop.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
     <Reference Include="Microsoft.VisualStudio.Shell.Interop.12.0, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -94,6 +91,9 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.Utilities, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Workspace, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Workspace.Extensions, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Workspace.Extensions.VS, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualStudio.Workspace.VSIntegration.Contracts, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -117,9 +117,6 @@
     <Reference Include="Microsoft.VisualStudio.Debugger.Interop.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualStudio.Debugger.Interop.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualStudio.Debugger.InteropA, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-    <Reference Include="Microsoft.VisualStudio.Designer.Interfaces, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-    </Reference>
     <Reference Include="Microsoft.VisualStudio.Editor, Version=$(VSTarget).0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualStudio.Language.Intellisense, Version=$(VSTarget).0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualStudio.Language.StandardClassification, Version=$(VSTarget).0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -182,15 +179,6 @@
     <Compile Include="..\..\..\Common\Product\SharedProject\CommonUtils.cs">
       <Link>SharedProject\CommonUtils.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\Common\Product\SharedProject\ExceptionExtensions.cs">
-      <Link>SharedProject\ExceptionExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\Common\Product\SharedProject\ILambdaConverterProvider.cs">
-      <Link>SharedProject\Wpf\LambdaConverter\ILambdaConverterProvider.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\Common\Product\SharedProject\LambdaConverter.cs">
-      <Link>SharedProject\Wpf\LambdaConverter\LambdaConverter.cs</Link>
-    </Compile>
     <Compile Include="..\..\..\Common\Product\SharedProject\ProcessOutput.cs">
       <Link>SharedProject\ProcessOutput.cs</Link>
     </Compile>
@@ -198,7 +186,7 @@
       <Link>SharedProject\SolutionEventsListener.cs</Link>
     </Compile>
     <Compile Include="..\TypeScript\TypeScriptHelpers.cs">
-      <Link>Project\TypeScriptHelpers.cs</Link>
+      <Link>TypeScriptHelpers\TypeScriptHelpers.cs</Link>
     </Compile>
     <Compile Include="Azure\WebSiteServiceShims.cs" />
     <Compile Include="ClassifierProviderMetadata.cs" />
@@ -206,7 +194,14 @@
     <Compile Include="Commands\ImportWizardCommand.cs" />
     <Compile Include="Commands\OpenReplWindowCommand.cs" />
     <Compile Include="Debugger\DebugEngine\AD7EvalErrorProperty.cs" />
-    <Compile Include="Debugger\NodeDebugProvider.cs" />
+    <Compile Include="TypeScriptHelpers\TsConfigJson.cs" />
+    <Compile Include="TypeScriptHelpers\TsConfigJsonFactory.cs" />
+    <Compile Include="TypeScriptHelpers\TypeScriptCompile.cs" />
+    <Compile Include="TypeScriptHelpers\TypeScriptCompilerLocator.cs" />
+    <Compile Include="Workspace\BaseFileScanner.cs" />
+    <Compile Include="Workspace\ContextMenuProvider.cs" />
+    <Compile Include="Workspace\LaunchDebugTargetProvider.cs" />
+    <Compile Include="Workspace\NodeJsDebugLaunchTargetProvider.cs" />
     <Compile Include="GeneratedHelpAboutVersion.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -225,6 +220,7 @@
     <Compile Include="Debugger\ScriptTree.cs" />
     <Compile Include="Logging\LiveLogger.cs" />
     <Compile Include="NodejsPackage.Debugger.cs" />
+    <Compile Include="NpmUI\FilterStateVisibilityConverter.cs" />
     <Compile Include="NpmUI\LastRefreshedMessageProvider.cs" />
     <Compile Include="NpmUI\NpmInstallWindowResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -238,6 +234,7 @@
     </Compile>
     <Compile Include="NpmUI\PackageCatalogEntryViewModel.cs" />
     <Compile Include="Project\AzureToolsContracts.cs" />
+    <Compile Include="Project\ImportWizard\ProjectLanguageBoolConverter.cs" />
     <Compile Include="Project\MissingNodeInfoBar.cs" />
     <Compile Include="Project\NewFileMenuGroup\NewFileUtilities.cs" />
     <Compile Include="Project\NewFileMenuGroup\NewFileNameForm.cs">
@@ -273,6 +270,16 @@
     <Compile Include="Debugger\ExceptionHandler.cs" />
     <Compile Include="ProvideLanguageTemplates.cs" />
     <Compile Include="Repl\InfoReplCommand.cs" />
+    <Compile Include="Repl\InteractiveContentType.cs" />
+    <Compile Include="Repl\InteractiveWindowColor.cs" />
+    <Compile Include="Repl\InteractiveWindowCommand.cs" />
+    <Compile Include="Repl\InteractiveWindowProvider.cs" />
+    <Compile Include="Repl\ReplOutputClassificationFormatDefinitions.cs" />
+    <Compile Include="Repl\ReplOutputClassifier.cs" />
+    <Compile Include="Repl\ReplOutputClassifierProvider.cs" />
+    <Compile Include="SharedProject\CommonProjectNode.FileSystemChange.cs" />
+    <Compile Include="SharedProject\ExceptionExtensions.cs" />
+    <Compile Include="SharedProject\OutputWindowWrapper.cs" />
     <Compile Include="SourceMapping\FunctionInfo.cs" />
     <Compile Include="SourceMapping\JavaScriptSourceMapInfo.cs" />
     <Compile Include="Debugger\NodeConstants.cs" />
@@ -281,6 +288,13 @@
     <Compile Include="Debugger\SteppingKind.cs" />
     <Compile Include="Project\NodejsFileNodeProperties.cs" />
     <Compile Include="Jade\JadeEditorFactory.cs" />
+    <Compile Include="Workspace\JsFileDebugLaunchTargetProvider.cs" />
+    <Compile Include="Workspace\PackageJsonScannerFactory.cs" />
+    <Compile Include="Workspace\TsConfigScannerFactory.cs" />
+    <Compile Include="Workspace\TypeScriptActionProviderFactory.cs" />
+    <Compile Include="Workspace\TypeScriptContextProviderFactory.cs" />
+    <Compile Include="Workspace\TypeScriptScannerFactory.cs" />
+    <Compile Include="Workspace\WorkspaceExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Project\ProjectResources.cs" />
@@ -438,10 +452,8 @@
     <Compile Include="Project\NodeModulesNode.cs" />
     <Compile Include="Project\NodejsFileNode.cs" />
     <Compile Include="ProvideEditorExtension2Attribute.cs" />
-    <Compile Include="Repl\ClearReplCommand.cs" />
-    <Compile Include="Repl\INodejsReplSite.cs" />
     <Compile Include="Repl\SaveReplCommand.cs" />
-    <Compile Include="Repl\VsNodejsReplSite.cs" />
+    <Compile Include="Repl\NodejsReplSite.cs" />
     <Compile Include="SourceMapping\SourceMap.cs" />
     <Compile Include="Telemetry\TelemetryEvents.cs" />
     <Compile Include="TestFrameworks\TestFrameworkDirectories.cs" />
@@ -506,8 +518,6 @@
     <Compile Include="Project\NodejsProjectNodeProperties.cs" />
     <Compile Include="Project\NodejsProjectPackage.cs" />
     <Compile Include="Repl\NodejsReplEvaluator.cs" />
-    <Compile Include="Repl\NodejsReplEvaluatorProvider.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="NodejsPackage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Telemetry\TelemetryHelper.cs" />
@@ -569,6 +579,14 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="OpenFolder.pkgdef">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Workspace\OpenFolderSchema.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <ZipItem Include="Templates\Files\EmptyCss\EmptyCss.css" />
     <ZipItem Include="Templates\Files\EmptyCss\EmptyCss.vstemplate" />
     <ZipItem Include="Templates\Files\EmptyHtml\EmptyHtml.html" />
@@ -617,6 +635,8 @@
     <ZipItem Include="Templates\Files\EmptyJson\EmptyJson.json" />
     <ZipItem Include="Templates\Files\EmptyLess\EmptyLess.less" />
     <ZipItem Include="Templates\Files\EmptyPug\EmptyPug.pug" />
+    <Compile Include="SharedProject\CommonProjectNode.DiskMerger.cs" />
+    <ZipItem Include="Templates\Files\TypeScriptJsConfig\jsconfig.json" />
     <None Include="Theme\contrast.vstheme">
       <SubType>Designer</SubType>
     </None>
@@ -836,6 +856,14 @@
       <SubType>Designer</SubType>
     </ZipItem>
     <None Include="Theme\Microsoft.NodejsTools.theme.v15.0.pkgdef" />
+    <ZipItem Include="Templates\Files\JasmineUnitTest\UnitTest.js" />
+    <ZipItem Include="Templates\Files\JasmineUnitTest\UnitTest.vstemplate">
+      <SubType>Designer</SubType>
+    </ZipItem>
+    <ZipItem Include="Templates\Files\TypeScriptJasmineUnitTest\UnitTest.vstemplate">
+      <SubType>Designer</SubType>
+    </ZipItem>
+    <ZipItem Include="Templates\Files\TypeScriptJsConfig\jsconfig.vstemplate" />
     <Content Include="VSTemplateStore.pkgdef">
       <IncludeInVSIX>false</IncludeInVSIX>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -939,10 +967,6 @@
     </ZipProject>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\InteractiveWindow\InteractiveWindow.csproj">
-      <Project>{24a3887f-da50-4989-8d6c-4a5b04d5d457}</Project>
-      <Name>InteractiveWindow</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Npm\Npm.csproj">
       <Project>{e5ef4b0a-ab41-4b98-8fa8-98d6348003a8}</Project>
       <Name>Npm</Name>
@@ -1035,7 +1059,6 @@
     <Compile Include="SharedProject\CommonPropertyPage.cs" />
     <Compile Include="SharedProject\CommonReferenceContainerNode.cs" />
     <Compile Include="SharedProject\ConfigProvider.cs" />
-    <Compile Include="SharedProject\FileWatcher.cs" />
     <Compile Include="SharedProject\FlavoredProjectFactoryBase.cs" />
     <Compile Include="SharedProject\DataObject.cs" />
     <Compile Include="SharedProject\DependentFileNode.cs" />
@@ -1146,8 +1169,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="SharedProject\Wpf\LambdaConverter\LambdaExtension.cs" />
-    <Compile Include="SharedProject\Wpf\LambdaConverter\LambdaProperties.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SharedProject\WebPiComponentPickerControl.resx">
@@ -1190,12 +1211,18 @@
     <PackageReference Include="Microsoft.VisualStudio.Threading">
       <Version>15.5.13-beta</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Workspaces">
-      <Version>15.0.215-pre</Version>
+    <PackageReference Include="Microsoft.VisualStudio.VsInteractiveWindow">
+      <Version>2.3.0</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>9.0.1</Version>
     </PackageReference>
+    <PackageReference Include="System.ValueTuple">
+      <Version>4.4.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ZipItem Include="Templates\Files\TypeScriptJasmineUnitTest\UnitTest.ts" />
   </ItemGroup>
   <PropertyGroup>
     <!--
@@ -1247,7 +1274,7 @@ copy /y $(OutDir)..\WebRole\Microsoft.NodejsTools.WebRole.dll $(OutDir)RemoteDeb
       into the NodejsTools output folder temporarily to generate the pkgdef file.
   -->
   <Target Name="_CopyForCreatePkgDef" BeforeTargets="GeneratePkgDef">
-    <Copy SourceFiles="$(OutputPath)..\ProjectWizard\Microsoft.NodejsTools.ProjectWizard.dll;$(OutputPath)..\Npm\Microsoft.NodejsTools.Npm.dll;$(OutputPath)..\PressAnyKey\Microsoft.NodejsTools.PressAnyKey.exe;$(OutputPath)..\InteractiveWindow\Microsoft.NodejsTools.InteractiveWindow.dll;" DestinationFolder="$(OutputPath)">
+    <Copy SourceFiles="$(OutputPath)..\ProjectWizard\Microsoft.NodejsTools.ProjectWizard.dll;$(OutputPath)..\Npm\Microsoft.NodejsTools.Npm.dll;$(OutputPath)..\PressAnyKey\Microsoft.NodejsTools.PressAnyKey.exe;" DestinationFolder="$(OutputPath)">
       <Output TaskParameter="CopiedFiles" ItemName="_CopiedForCreatePkgdef" />
     </Copy>
   </Target>

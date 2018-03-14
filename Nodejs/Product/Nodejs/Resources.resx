@@ -121,7 +121,7 @@
     <value>Specifies the URL to open in the browser.  If unspecified http://localhost:port is used.\r\nIf a port is specified, it needs to be specified here as well.</value>
   </data>
   <data name="NodeExeArguments" xml:space="preserve">
-    <value>Arguments to Node.exe</value>
+    <value>Node.exe options</value>
   </data>
   <data name="NodeExeArgumentsDescription" xml:space="preserve">
     <value>Specifies the options provided to node.exe, such as -e or -i.</value>
@@ -136,7 +136,7 @@
     <value>Specifies the path to the node.exe executable.</value>
   </data>
   <data name="NodejsPort" xml:space="preserve">
-    <value>Node.js Port</value>
+    <value>Application port</value>
   </data>
   <data name="NodejsNotInstalled" xml:space="preserve">
     <value>Could not find a Node.js runtime on your computer.  Please download and install the current Node.js release from https://nodejs.org, or specify the location of your Node.exe in the Visual Studio Node Project's properties page.</value>
@@ -344,13 +344,13 @@
     <value>More than 3 months ago</value>
   </data>
   <data name="NpmCancelledWithErrors" xml:space="preserve">
-    <value>{0} cancelled with errors - see Output window for details</value>
+    <value>{0} canceled with errors - see Output window for details</value>
   </data>
   <data name="NpmCompletedWithErrors" xml:space="preserve">
     <value>{0} completed with errors - see Output window for details</value>
   </data>
   <data name="NpmCancelled" xml:space="preserve">
-    <value>{0} cancelled</value>
+    <value>{0} canceled</value>
   </data>
   <data name="NpmSuccessfullyCompleted" xml:space="preserve">
     <value>{0} successfully completed</value>
@@ -412,9 +412,6 @@ NAME2=value2
   </data>
   <data name="NodejsPortDescription" xml:space="preserve">
     <value>Specifies the port number used for process.env.port, if unspecified a random port is generated.</value>
-  </data>
-  <data name="NpmOutputPaneTitle" xml:space="preserve">
-    <value>Npm</value>
   </data>
   <data name="NpmPackageInstallHelpMessage" xml:space="preserve">
     <value>(enter arguments above)</value>
@@ -636,7 +633,7 @@ Error retrieving websocket debug proxy information from web.config.</value>
     <value>Launch &amp;URL:</value>
   </data>
   <data name="PropertiesNodePort" xml:space="preserve">
-    <value>Node.&amp;js port:</value>
+    <value>Applica&amp;tion port:</value>
   </data>
   <data name="PropertiesScript" xml:space="preserve">
     <value>&amp;Script (startup file):</value>
@@ -676,7 +673,7 @@ Error retrieving websocket debug proxy information from web.config.</value>
     <value>Resets the context object to an empty object and clears any multi-line expression.</value>
   </data>
   <data name="ReplSaveDescription" xml:space="preserve">
-    <value>Clears the contents of the REPL editor window.</value>
+    <value>Save the current REPL session to a file.</value>
   </data>
   <data name="ReplSaveFailed" xml:space="preserve">
     <value>Failed to save: '{0}'.</value>
@@ -730,5 +727,84 @@ Error retrieving websocket debug proxy information from web.config.</value>
   </data>
   <data name="NodejsNotInstalledInfoBar" xml:space="preserve">
     <value>Could not find a Node.js runtime on your computer. Please install Node.js and restart VS, or specify the location of node.exe in the project properties page.</value>
+  </data>
+  <data name="NodeHeader" xml:space="preserve">
+    <value>Node</value>
+  </data>
+  <data name="StartActionHeader" xml:space="preserve">
+    <value>Start Action</value>
+  </data>
+  <data name="BrowseWorkingDirDialogTitle" xml:space="preserve">
+    <value>Select Working Dir</value>
+  </data>
+  <data name="ClassificationBlack" xml:space="preserve">
+    <value>Node.js Interactive - Black</value>
+  </data>
+  <data name="ClassificationBlue" xml:space="preserve">
+    <value>Node.js Interactive - Blue</value>
+  </data>
+  <data name="ClassificationCyan" xml:space="preserve">
+    <value>Node.js Interactive - Cyan</value>
+  </data>
+  <data name="ClassificationDarkBlue" xml:space="preserve">
+    <value>Node.js Interactive - Dark Blue</value>
+  </data>
+  <data name="ClassificationDarkCyan" xml:space="preserve">
+    <value>Node.js Interactive - Dark Cyan</value>
+  </data>
+  <data name="ClassificationDarkGray" xml:space="preserve">
+    <value>Node.js Interactive - Dark Gray</value>
+  </data>
+  <data name="ClassificationDarkGreen" xml:space="preserve">
+    <value>Node.js Interactive - Dark Green</value>
+  </data>
+  <data name="ClassificationDarkMagenta" xml:space="preserve">
+    <value>Node.js Interactive - Dark Magenta</value>
+  </data>
+  <data name="ClassificationDarkRed" xml:space="preserve">
+    <value>Node.js Interactive - Dark Red</value>
+  </data>
+  <data name="ClassificationDarkYellow" xml:space="preserve">
+    <value>Node.js Interactive - Dark Yellow</value>
+  </data>
+  <data name="ClassificationError" xml:space="preserve">
+    <value>Node.js Interactive - Error</value>
+  </data>
+  <data name="ClassificationGray" xml:space="preserve">
+    <value>Node.js Interactive - Gray</value>
+  </data>
+  <data name="ClassificationGreen" xml:space="preserve">
+    <value>Node.js Interactive - Green</value>
+  </data>
+  <data name="ClassificationMagenta" xml:space="preserve">
+    <value>Node.js Interactive - Magenta</value>
+  </data>
+  <data name="ClassificationRed" xml:space="preserve">
+    <value>Node.js Interactive - Red</value>
+  </data>
+  <data name="ClassificationWhite" xml:space="preserve">
+    <value>Node.js Interactive - White</value>
+  </data>
+  <data name="ClassificationYellow" xml:space="preserve">
+    <value>Node.js Interactive - Yellow</value>
+  </data>
+  <data name="SaveNodeSettingsInProjectFile" xml:space="preserve">
+    <value>&amp;Apply Node.js settings to all users (save in project file)</value>
+  </data>
+  <data name="SaveInProjectFileToolTip" xml:space="preserve">
+    <value>When checked the Node.js specific properties are saved per user</value>
+  </data>
+  <data name="TscBuildCanceled" xml:space="preserve">
+    <value>Build Canceled</value>
+  </data>
+  <data name="TscBuildCompleted" xml:space="preserve">
+    <value>Build Completed</value>
+  </data>
+  <data name="TscBuildError" xml:space="preserve">
+    <value>Error - Failed to start '{0}'</value>
+    <comment>Template is substituted with path to tsc.exe</comment>
+  </data>
+  <data name="TscBuildStarted" xml:space="preserve">
+    <value>Build Started</value>
   </data>
 </root>

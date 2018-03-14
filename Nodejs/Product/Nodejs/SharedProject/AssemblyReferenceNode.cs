@@ -74,7 +74,7 @@ namespace Microsoft.VisualStudioTools.Project
 
             if (File.Exists(this.assemblyPath))
             {
-                this.fileChangeListener.ObserveItem(this.assemblyPath);
+                this.fileChangeListener.ObserveFile(this.assemblyPath);
             }
 
             var include = this.ItemNode.GetMetadata(ProjectFileConstants.Include);
@@ -108,7 +108,7 @@ namespace Microsoft.VisualStudioTools.Project
                 this.assemblyPath = assemblyPath;
 
                 // We register with listeningto chnages onteh path here. The rest of teh cases will call into resolving the assembly and registration is done there.
-                this.fileChangeListener.ObserveItem(this.assemblyPath);
+                this.fileChangeListener.ObserveFile(this.assemblyPath);
             }
             else
             {
@@ -209,8 +209,7 @@ namespace Microsoft.VisualStudioTools.Project
 
             for (var n = referencesFolder.FirstChild; n != null; n = n.NextSibling)
             {
-                var assemblyRefererenceNode = n as AssemblyReferenceNode;
-                if (null != assemblyRefererenceNode)
+                if (n is AssemblyReferenceNode assemblyRefererenceNode)
                 {
                     // We will check if the full assemblynames are the same or if the Url of the assemblies is the same.
                     if (StringComparer.OrdinalIgnoreCase.Equals(assemblyRefererenceNode.AssemblyName.FullName, this.assemblyName.FullName) ||
@@ -358,7 +357,7 @@ namespace Microsoft.VisualStudioTools.Project
                         this.assemblyPath = fullPath;
 
                         // We have a new item to listen too, since the assembly reference is resolved from a different place.
-                        this.fileChangeListener.ObserveItem(this.assemblyPath);
+                        this.fileChangeListener.ObserveFile(this.assemblyPath);
                     }
 
                     this.resolvedAssemblyName = name;

@@ -12,7 +12,6 @@ using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using VSLangProj;
-using IOleServiceProvider = Microsoft.VisualStudio.OLE.Interop.IServiceProvider;
 
 namespace Microsoft.VisualStudioTools.Project
 {
@@ -74,7 +73,7 @@ namespace Microsoft.VisualStudioTools.Project
         #region ctors
         internal NodeProperties(HierarchyNode node)
         {
-            Utilities.ArgumentNotNull("node", node);
+            Utilities.ArgumentNotNull(nameof(node), node);
             this.node = node;
         }
         #endregion
@@ -607,9 +606,8 @@ namespace Microsoft.VisualStudioTools.Project
 
         public override StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
         {
-            var nodeProps = context.Instance as FileNodeProperties;
             IEnumerable<string> itemNames;
-            if (nodeProps != null)
+            if (context.Instance is FileNodeProperties nodeProps)
             {
                 itemNames = nodeProps.HierarchyNode.ProjectMgr.GetAvailableItemNames();
             }
@@ -690,8 +688,6 @@ namespace Microsoft.VisualStudioTools.Project
         /// </summary>
         /// <param name="editorBaseType">Type of the editor</param>
         /// <returns>Editor</returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope",
-            Justification = "The service provider is used by the PropertiesEditorLauncher")]
         public override object GetEditor(Type editorBaseType)
         {
             // Override the scenario where we are asked for a ComponentEditor

@@ -1,4 +1,4 @@
-// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
+﻿// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 using System;
 using System.Collections.Generic;
@@ -7,26 +7,26 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.NodejsTools.Npm;
+using Microsoft.NodejsTools.NpmUI;
 using Microsoft.NodejsTools.Project;
 using Microsoft.VisualStudio;
+using Microsoft.VisualStudio.InteractiveWindow;
+using Microsoft.VisualStudio.InteractiveWindow.Commands;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
+using Microsoft.VisualStudio.Utilities;
 using Microsoft.VisualStudioTools.Project;
-using Task = System.Threading.Tasks.Task;
 
 namespace Microsoft.NodejsTools.Repl
 {
-    [Export(typeof(IReplCommand))]
-    internal class NpmReplCommand : IReplCommand
+    [Export(typeof(IInteractiveWindowCommand))]
+    [ContentType(ReplConstants.ContentType)]
+    internal class NpmReplCommand : InteractiveWindowCommand
     {
-        #region IReplCommand Members
-
-        public async Task<ExecutionResult> Execute(IReplWindow window, string arguments)
+        public override async Task<ExecutionResult> Execute(IInteractiveWindow window, string arguments)
         {
             var projectPath = string.Empty;
             var npmArguments = arguments.Trim(' ', '\t');
@@ -54,7 +54,7 @@ namespace Microsoft.NodejsTools.Repl
             var solution = Package.GetGlobalService(typeof(SVsSolution)) as IVsSolution;
             var loadedProjects = solution.EnumerateLoadedProjects(onlyNodeProjects: false);
 
-            var projectNameToDirectoryDictionary = new Dictionary<string, Tuple<string, IVsHierarchy>>(StringComparer.OrdinalIgnoreCase);
+            var projectNameToDirectoryDictionary = new Dictionary<string, (string, IVsHierarchy)>(StringComparer.OrdinalIgnoreCase);
             foreach (var project in loadedProjects)
             {
                 var hierarchy = (IVsHierarchy)project;
@@ -96,7 +96,7 @@ namespace Microsoft.NodejsTools.Repl
                         var projectHomeDirectory = projectHome.Value as string;
                         if (!string.IsNullOrEmpty(projectHomeDirectory))
                         {
-                            projectNameToDirectoryDictionary.Add(projectName, Tuple.Create(projectHomeDirectory, hierarchy));
+                            projectNameToDirectoryDictionary.Add(projectName, (projectHomeDirectory, hierarchy));
                             continue;
                         }
                     }
@@ -106,11 +106,11 @@ namespace Microsoft.NodejsTools.Repl
                 var projectDirectory = string.IsNullOrEmpty(dteProject.FullName) ? null : Path.GetDirectoryName(dteProject.FullName);
                 if (!string.IsNullOrEmpty(projectDirectory))
                 {
-                    projectNameToDirectoryDictionary.Add(projectName, Tuple.Create(projectDirectory, hierarchy));
+                    projectNameToDirectoryDictionary.Add(projectName, (projectDirectory, hierarchy));
                 }
             }
 
-            Tuple<string, IVsHierarchy> projectInfo;
+            (string ProjectPath, IVsHierarchy Hierarchy) projectInfo;
             if (string.IsNullOrEmpty(projectPath) && projectNameToDirectoryDictionary.Count == 1)
             {
                 projectInfo = projectNameToDirectoryDictionary.Values.First();
@@ -121,13 +121,10 @@ namespace Microsoft.NodejsTools.Repl
             }
 
             NodejsProjectNode nodejsProject = null;
-            if (projectInfo != null)
+            projectPath = projectInfo.ProjectPath;
+            if (projectInfo.Hierarchy != null)
             {
-                projectPath = projectInfo.Item1;
-                if (projectInfo.Item2 != null)
-                {
-                    nodejsProject = projectInfo.Item2.GetProject().GetNodejsProject();
-                }
+                nodejsProject = projectInfo.Hierarchy.GetProject().GetNodejsProject();
             }
 
             var isGlobalCommand = false;
@@ -163,13 +160,16 @@ namespace Microsoft.NodejsTools.Repl
                 return ExecutionResult.Failure;
             }
 
-            var npmReplRedirector = new NpmReplRedirector(window);
-            await ExecuteNpmCommandAsync(
-                npmReplRedirector,
+            var evaluator = window.Evaluator as NodejsReplEvaluator;
+
+            Debug.Assert(evaluator != null, "How did we end up with an evaluator that's not the nodetools evaluator?");
+
+            var npmReplRedirector = new NpmReplRedirector(evaluator);
+            await NpmWorker.ExecuteNpmCommandAsync(
                 npmPath,
                 projectDirectoryPath,
                 new[] { npmArguments },
-                null);
+                redirector: npmReplRedirector);
 
             if (npmReplRedirector.HasErrors)
             {
@@ -188,82 +188,11 @@ namespace Microsoft.NodejsTools.Repl
             return ExecutionResult.Success;
         }
 
-        public string Description => Resources.NpmExecuteCommand;
+        public override string Description => Resources.NpmExecuteCommand;
 
-        public string Command => "npm";
+        public override string Command => "npm";
 
-        public object ButtonContent => null;
-        
-        // TODO: This is duplicated from Npm project
-        // We should consider using InternalsVisibleTo to avoid code duplication
-        internal static async Task<IEnumerable<string>> ExecuteNpmCommandAsync(
-            Redirector redirector,
-            string pathToNpm,
-            string executionDirectory,
-            string[] arguments,
-            ManualResetEvent cancellationResetEvent)
-        {
-            IEnumerable<string> standardOutputLines = null;
-
-            using (var process = ProcessOutput.Run(
-                pathToNpm,
-                arguments,
-                executionDirectory,
-                null,
-                false,
-                redirector,
-                quoteArgs: false,
-                outputEncoding: Encoding.UTF8 // npm uses UTF-8 regardless of locale if its output is redirected
-                ))
-            {
-                var whnd = process.WaitHandle;
-                if (whnd == null)
-                {
-                    // Process failed to start, and any exception message has
-                    // already been sent through the redirector
-                    if (redirector != null)
-                    {
-                        redirector.WriteErrorLine("Error - cannot start npm");
-                    }
-                }
-                else
-                {
-                    var handles = cancellationResetEvent != null ? new[] { whnd, cancellationResetEvent } : new[] { whnd };
-                    var i = await Task.Run(() => WaitHandle.WaitAny(handles));
-                    if (i == 0)
-                    {
-                        Debug.Assert(process.ExitCode.HasValue, "npm process has not really exited");
-                        process.Wait();
-                        if (process.StandardOutputLines != null)
-                        {
-                            standardOutputLines = process.StandardOutputLines.ToList();
-                        }
-                    }
-                    else
-                    {
-                        process.Kill();
-                        if (redirector != null)
-                        {
-                            redirector.WriteErrorLine(string.Format(CultureInfo.CurrentCulture,
-                            "\r\n===={0}====\r\n\r\n",
-                            "npm command cancelled"));
-                        }
-
-                        if (cancellationResetEvent != null)
-                        {
-                            cancellationResetEvent.Reset();
-                        }
-
-                        throw new OperationCanceledException();
-                    }
-                }
-            }
-            return standardOutputLines;
-        }
-
-        #endregion
-
-        internal class NpmReplRedirector : Redirector
+        internal sealed class NpmReplRedirector : Redirector
         {
             internal const string ErrorAnsiColor = "\x1b[31;1m";
             internal const string WarnAnsiColor = "\x1b[33;22m";
@@ -272,11 +201,11 @@ namespace Microsoft.NodejsTools.Repl
             private const string ErrorText = "npm ERR!";
             private const string WarningText = "npm WARN";
 
-            private IReplWindow _window;
+            private readonly NodejsReplEvaluator evaluator;
 
-            public NpmReplRedirector(IReplWindow window)
+            public NpmReplRedirector(NodejsReplEvaluator evaluator)
             {
-                this._window = window;
+                this.evaluator = evaluator;
                 this.HasErrors = false;
             }
 
@@ -305,13 +234,13 @@ namespace Microsoft.NodejsTools.Repl
 
                 outputString += NormalAnsiColor + substring;
 
-                this._window.WriteLine(outputString);
+                this.evaluator.WriteLine(outputString);
                 Debug.WriteLine(decodedString, "REPL npm");
             }
 
             public override void WriteErrorLine(string line)
             {
-                this._window.WriteError(line);
+                this.evaluator.WriteError(line);
             }
         }
     }

@@ -1,6 +1,5 @@
-// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
+﻿// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -74,7 +73,7 @@ namespace Microsoft.VisualStudioTools.Project
         {
             bool? publish = null;
             var pubValue = item.GetMetadataValue("Publish");
-            if (!string.IsNullOrWhiteSpace(pubValue) && Boolean.TryParse(pubValue, out var pubSetting))
+            if (!string.IsNullOrWhiteSpace(pubValue) && bool.TryParse(pubValue, out var pubSetting))
             {
                 publish = pubSetting;
             }

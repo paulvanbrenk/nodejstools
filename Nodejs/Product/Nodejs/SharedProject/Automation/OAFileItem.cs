@@ -82,8 +82,6 @@ namespace Microsoft.VisualStudioTools.Project.Automation
                 {
                     this.Node.ProjectMgr.Site.GetUIThread().Invoke(() =>
                     {
-
-
                         VsShellUtilities.IsDocumentOpen(this.Node.ProjectMgr.Site, this.Node.Url, VSConstants.LOGVIEWID_Any, out var hier, out var itemid, out var windowFrame);
 
                         if (windowFrame != null)
@@ -267,7 +265,7 @@ namespace Microsoft.VisualStudioTools.Project.Automation
         /// <param name="fileName">The name of the project file.</param>        
         private void DoSave(bool isCalledFromSaveAs, string fileName)
         {
-            Utilities.ArgumentNotNull("fileName", fileName);
+            Utilities.ArgumentNotNull(nameof(fileName), fileName);
 
             CheckProjectIsValid();
 

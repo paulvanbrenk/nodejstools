@@ -1,4 +1,4 @@
-// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
+﻿// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 using System;
 using System.Collections.Generic;
@@ -94,9 +94,8 @@ namespace Microsoft.VisualStudioTools.Project
 
         public override void Remove(bool removeFromStorage)
         {
-            var parent = this.Parent as ReferenceContainerNode;
             base.Remove(removeFromStorage);
-            if (parent != null)
+            if (this.Parent is ReferenceContainerNode parent)
             {
                 parent.FireChildRemoved(this);
             }
@@ -162,7 +161,6 @@ namespace Microsoft.VisualStudioTools.Project
             var referencesFolder = this.ProjectMgr.GetReferenceContainer() as ReferenceContainerNode;
             Utilities.CheckNotNull(referencesFolder, "Could not find the References node");
 
-
             if (!this.CanAddReference(out var referenceErrorMessageHandler))
             {
                 if (referenceErrorMessageHandler != null)
@@ -227,8 +225,7 @@ namespace Microsoft.VisualStudioTools.Project
 
             for (var n = referencesFolder.FirstChild; n != null; n = n.NextSibling)
             {
-                var refererenceNode = n as ReferenceNode;
-                if (null != refererenceNode)
+                if (n is ReferenceNode refererenceNode)
                 {
                     // We check if the Url of the assemblies is the same.
                     if (CommonUtils.IsSamePath(refererenceNode.Url, this.Url))

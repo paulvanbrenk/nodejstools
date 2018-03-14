@@ -145,6 +145,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";BrowseWorkingDirDialogTitle" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Select Working Dir]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Seleccionar el directorio de trabajo]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";CacheDirectoryClearFailedCaption" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Could not clear Node.js cache directory. Try manually deleting the directory: {0}]]></Val>
@@ -186,6 +195,168 @@
           <Val><![CDATA[Version]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Versión]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ClassificationBlack" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Node.js Interactive - Black]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Node.js interactivo: negro]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ClassificationBlue" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Node.js Interactive - Blue]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Node.js interactivo: azul]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ClassificationCyan" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Node.js Interactive - Cyan]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Node.js interactivo: cian]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ClassificationDarkBlue" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Node.js Interactive - Dark Blue]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Node.js interactivo: azul oscuro]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ClassificationDarkCyan" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Node.js Interactive - Dark Cyan]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Node.js interactivo: cian oscuro]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ClassificationDarkGray" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Node.js Interactive - Dark Gray]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Node.js interactivo: gris oscuro]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ClassificationDarkGreen" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Node.js Interactive - Dark Green]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Node.js interactivo: verde oscuro]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ClassificationDarkMagenta" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Node.js Interactive - Dark Magenta]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Node.js interactivo: magenta oscuro]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ClassificationDarkRed" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Node.js Interactive - Dark Red]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Node.js interactivo: rojo oscuro]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ClassificationDarkYellow" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Node.js Interactive - Dark Yellow]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Node.js interactivo: amarillo oscuro]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ClassificationError" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Node.js Interactive - Error]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Node.js interactivo: error]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ClassificationGray" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Node.js Interactive - Gray]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Node.js interactivo: gris]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ClassificationGreen" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Node.js Interactive - Green]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Node.js interactivo: verde]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ClassificationMagenta" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Node.js Interactive - Magenta]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Node.js interactivo: magenta]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ClassificationRed" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Node.js Interactive - Red]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Node.js interactivo: rojo]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ClassificationWhite" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Node.js Interactive - White]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Node.js interactivo: blanco]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ClassificationYellow" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Node.js Interactive - Yellow]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Node.js interactivo: amarillo]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ConfigureProjectProperties" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Configure project properties]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Configurar las propiedades del proyecto]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -294,6 +465,15 @@
           <Val><![CDATA[Path to module does not exist:]D;]A;{0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[No existe una ruta de acceso al módulo:]D;]A;{0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";DownloadNodejs" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Download Node.js]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Descargar Node.js]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -633,10 +813,13 @@
       </Item>
       <Item ItemId=";NodeExeArguments" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Arguments to Node.exe]]></Val>
+          <Val><![CDATA[Node.exe options]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Argumentos para Node.exe]]></Val>
+            <Val><![CDATA[Opciones de Node.exe]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Arguments to Node.exe]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -703,6 +886,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";NodeHeader" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Node]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nodo]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";NodeModulesCouldNotParsePackageJsonErrorMessageText" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to parse {0} from your project.  Please fix any errors and try again.]]></Val>
@@ -730,6 +922,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";NodejsNotInstalledInfoBar" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Could not find a Node.js runtime on your computer. Please install Node.js and restart VS, or specify the location of node.exe in the project properties page.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[No se pudo encontrar un entorno de tiempo de ejecución de Node.js en su equipo. Instale Node.js y reinicie VS, o especifique la ubicación del archivo node.exe en la página de propiedades del proyecto.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";NodejsNotInstalledShort" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Node.js has not been detected on your computer]]></Val>
@@ -750,10 +951,13 @@
       </Item>
       <Item ItemId=";NodejsPort" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Node.js Port]]></Val>
+          <Val><![CDATA[Application port]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Puerto de Node.js]]></Val>
+            <Val><![CDATA[Puerto de la aplicación]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Node.js Port]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1470,10 +1674,13 @@
       </Item>
       <Item ItemId=";PropertiesNodePort" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Node.&js port:]]></Val>
+          <Val><![CDATA[Applica&tion port:]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Puerto de Node.&js:]]></Val>
+            <Val><![CDATA[&Puerto de la aplicación:]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Node.&js port:]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1623,10 +1830,13 @@
       </Item>
       <Item ItemId=";ReplSaveDescription" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Clears the contents of the REPL editor window.]]></Val>
+          <Val><![CDATA[Save the current REPL session to a file.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Borra el contenido de la ventana del editor de REPL.]]></Val>
+            <Val><![CDATA[Guarda la sesión REPL actual en un archivo.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Clears the contents of the REPL editor window.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1684,6 +1894,24 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";SaveInProjectFileToolTip" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[When checked the Node.js specific properties are saved per user]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Cuando se selecciona, las propiedades específicas de Node.js se guardan por usuario]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";SaveNodeSettingsInProjectFile" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[&Apply Node.js settings to all users (save in project file)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[&Aplicar configuración de Node.js a todos los usuarios (guardar en archivo del proyecto)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";ScriptArgumentsToolTip" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Specifies the arguments passed to the script on launch.]]></Val>
@@ -1698,6 +1926,15 @@
           <Val><![CDATA[Specifies the script run on launch.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Especifica el script ejecutado en el inicio.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";StartActionHeader" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Start Action]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Acción de inicio]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -3457,7 +3694,7 @@
     </Item>
     <Item ItemId=";FileVersion" ItemType="0" PsrId="211" Leaf="true">
       <Str Cat="Text" DevLk="true">
-        <Val><![CDATA[1.4.11023.3]]></Val>
+        <Val><![CDATA[1.4.11211.5]]></Val>
       </Str>
       <Disp Icon="Str" />
     </Item>
@@ -3484,7 +3721,7 @@
     </Item>
     <Item ItemId=";ProductVersion" ItemType="0" PsrId="211" Leaf="true">
       <Str Cat="Text" DevLk="true">
-        <Val><![CDATA[1.4.11023.3 commit:a56bb48ccbafaef1631b21d9aff375d3ff1c29ec]]></Val>
+        <Val><![CDATA[1.4.11211.5 commit:ef29092c5d9a9804bab154d936bc119fe3650b27]]></Val>
       </Str>
       <Disp Icon="Str" />
     </Item>

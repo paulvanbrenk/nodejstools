@@ -1,9 +1,8 @@
-// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
+﻿// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
 using Microsoft.VisualStudio.Utilities;
 
 namespace Microsoft.NodejsTools.Jade
@@ -16,7 +15,7 @@ namespace Microsoft.NodejsTools.Jade
 
         private Dictionary<Type, object> _servicesByType = new Dictionary<Type, object>();
         private Dictionary<Guid, object> _servicesByGuid = new Dictionary<Guid, object>();
-        private Dictionary<Tuple<Type, string>, object> _servicesByContentType = new Dictionary<Tuple<Type, string>, object>();
+        private Dictionary<(Type, string), object> _servicesByContentType = new Dictionary<(Type, string), object>();
 
         private ServiceManager(IPropertyOwner propertyOwner)
         {
@@ -48,7 +47,6 @@ namespace Microsoft.NodejsTools.Jade
         /// <typeparam name="T">Service type</typeparam>
         /// <param name="propertyOwner">Property owner</param>
         /// <returns>Service instance</returns>
-        [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes")]
         public static T GetService<T>(IPropertyOwner propertyOwner) where T : class
         {
             try
@@ -71,7 +69,6 @@ namespace Microsoft.NodejsTools.Jade
         /// <typeparam name="T">Service type</typeparam>
         /// <param name="propertyOwner">Property owner</param>
         /// <returns>Service instance</returns>
-        [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes")]
         public static object GetService(IPropertyOwner propertyOwner, ref Guid serviceGuid)
         {
             try
@@ -213,7 +210,7 @@ namespace Microsoft.NodejsTools.Jade
             lock (this._lock)
             {
 
-                this._servicesByContentType.TryGetValue(Tuple.Create(typeof(T), contentType.TypeName), out var service);
+                this._servicesByContentType.TryGetValue((typeof(T), contentType.TypeName), out var service);
                 if (service != null)
                 {
                     return service as T;
@@ -279,8 +276,7 @@ namespace Microsoft.NodejsTools.Jade
             {
                 foreach (var kvp in this._servicesByType)
                 {
-                    var service = kvp.Value as T;
-                    if (service != null)
+                    if (kvp.Value is T service)
                     {
                         list.Add(service);
                     }
@@ -307,7 +303,7 @@ namespace Microsoft.NodejsTools.Jade
             {
                 if (GetService<T>(contentType) == null)
                 {
-                    this._servicesByContentType.Add(Tuple.Create(typeof(T), contentType.TypeName), serviceInstance);
+                    this._servicesByContentType.Add((typeof(T), contentType.TypeName), serviceInstance);
                 }
             }
         }
@@ -332,7 +328,7 @@ namespace Microsoft.NodejsTools.Jade
         {
             lock (this._lock)
             {
-                this._servicesByContentType.Remove(Tuple.Create(typeof(T), contentType.TypeName));
+                this._servicesByContentType.Remove((typeof(T), contentType.TypeName));
             }
         }
 

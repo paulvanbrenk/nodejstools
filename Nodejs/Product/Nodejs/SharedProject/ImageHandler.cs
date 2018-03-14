@@ -18,17 +18,9 @@ namespace Microsoft.VisualStudioTools.Project
         /// <summary>
         /// Initializes the <see cref="RDTListener"/> class.
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline")]
         static ImageHandler()
         {
             Mutex = new object();
-        }
-
-        /// <summary>
-        /// Builds an empty ImageHandler object.
-        /// </summary>
-        public ImageHandler()
-        {
         }
 
         /// <summary>
@@ -37,7 +29,7 @@ namespace Microsoft.VisualStudioTools.Project
         /// </summary>
         public ImageHandler(Stream resourceStream)
         {
-            Utilities.ArgumentNotNull("resourceStream", resourceStream);
+            Utilities.ArgumentNotNull(nameof(resourceStream), resourceStream);
             this.imageList = Utilities.GetImageList(resourceStream);
         }
 
@@ -46,7 +38,7 @@ namespace Microsoft.VisualStudioTools.Project
         /// </summary>
         public ImageHandler(ImageList list)
         {
-            Utilities.ArgumentNotNull("list", list);
+            Utilities.ArgumentNotNull(nameof(list), list);
 
             this.imageList = list;
         }
@@ -81,7 +73,7 @@ namespace Microsoft.VisualStudioTools.Project
         /// <param name="image">the image object to be added.</param>
         public void AddImage(Image image)
         {
-            Utilities.ArgumentNotNull("image", image);
+            Utilities.ArgumentNotNull(nameof(image), image);
             if (null == this.imageList)
             {
                 this.imageList = new ImageList();

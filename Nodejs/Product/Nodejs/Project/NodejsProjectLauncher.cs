@@ -20,7 +20,6 @@ using Microsoft.NodejsTools.Options;
 using Microsoft.NodejsTools.Telemetry;
 using Microsoft.NodejsTools.TypeScript;
 using Microsoft.VisualStudio;
-using Microsoft.VisualStudio.Setup.Configuration;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudioTools.Project;
@@ -379,6 +378,11 @@ namespace Microsoft.NodejsTools.Project
             // Here we need to massage the env variables into the format expected by node and vs code
             var webBrowserUrl = GetFullUrl();
             var envVars = GetEnvironmentVariables(webBrowserUrl);
+            var debuggerPort = this._project.GetProjectProperty(NodeProjectProperty.DebuggerPort);
+            if (string.IsNullOrWhiteSpace(debuggerPort))
+            {
+                debuggerPort = NodejsConstants.DefaultDebuggerPort.ToString();
+            }
 
             var runtimeArguments = ConvertArguments(this._project.GetProjectProperty(NodeProjectProperty.NodeExeArguments));
             var scriptArguments = ConvertArguments(this._project.GetProjectProperty(NodeProjectProperty.ScriptArguments));
@@ -392,6 +396,7 @@ namespace Microsoft.NodejsTools.Project
                 new JProperty("args", scriptArguments),
                 new JProperty("runtimeExecutable", nodePath),
                 new JProperty("runtimeArgs", runtimeArguments),
+                new JProperty("port", debuggerPort),
                 new JProperty("cwd", cwd),
                 new JProperty("console", "externalTerminal"),
                 new JProperty("env", JObject.FromObject(envVars)),
@@ -421,7 +426,7 @@ namespace Microsoft.NodejsTools.Project
                 var uri = new Uri(webBrowserUrl);
                 OnPortOpenedHandler.CreateHandler(
                     uri.Port,
-                    shortCircuitPredicate: () => false,
+                    timeout: 5_000, // 5 seconds
                     action: () =>
                     {
                         VsShellUtilities.OpenBrowser(webBrowserUrl, (uint)__VSOSPFLAGS.OSP_LaunchNewBrowser);
@@ -464,14 +469,13 @@ namespace Microsoft.NodejsTools.Project
                     Resources.DebugTypeScriptCombineNotSupportedWarningMessage,
                     SR.ProductName,
                     MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning
-                    ) == DialogResult.Yes;
+                    MessageBoxIcon.Warning) == DialogResult.Yes;
             }
 
             return true;
         }
 
-        private void AppendOption(ref VsDebugTargetInfo dbgInfo, string option, string value)
+        private static void AppendOption(ref VsDebugTargetInfo dbgInfo, string option, string value)
         {
             if (!string.IsNullOrWhiteSpace(dbgInfo.bstrOptions))
             {
@@ -584,7 +588,7 @@ namespace Microsoft.NodejsTools.Project
         {
             var startBrowser = this._project.GetProjectProperty(NodeProjectProperty.StartWebBrowser);
             if (!string.IsNullOrEmpty(startBrowser) &&
-                Boolean.TryParse(startBrowser, out var fStartBrowser))
+                bool.TryParse(startBrowser, out var fStartBrowser))
             {
                 return fStartBrowser;
             }

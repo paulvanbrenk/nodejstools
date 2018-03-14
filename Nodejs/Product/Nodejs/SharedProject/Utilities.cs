@@ -36,7 +36,7 @@ namespace Microsoft.VisualStudioTools.Project
         /// <returns>true if visual studio is in design mode</returns>
         public static bool IsVisualStudioInDesignMode(IServiceProvider site)
         {
-            Utilities.ArgumentNotNull("site", site);
+            Utilities.ArgumentNotNull(nameof(site), site);
 
             var selectionMonitor = site.GetService(typeof(IVsMonitorSelection)) as IVsMonitorSelection;
             var designContext = VSConstants.UICONTEXT_DesignMode;
@@ -53,7 +53,7 @@ namespace Microsoft.VisualStudioTools.Project
         /// <returns>true if the extensiblity object is executing an automation function.</returns>
         public static bool IsInAutomationFunction(IServiceProvider serviceProvider)
         {
-            Utilities.ArgumentNotNull("serviceProvider", serviceProvider);
+            Utilities.ArgumentNotNull(nameof(serviceProvider), serviceProvider);
 
             var extensibility = serviceProvider.GetService(typeof(EnvDTE.IVsExtensibility)) as IVsExtensibility3;
 
@@ -305,7 +305,6 @@ namespace Microsoft.VisualStudioTools.Project
         /// </summary>
         /// <param name="imageStream">A Stream representing a Bitmap</param>
         /// <returns>An ImageList object representing the images from the given stream</returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
         public static ImageList GetImageList(Stream imageStream)
         {
             var ilist = new ImageList();
@@ -330,7 +329,7 @@ namespace Microsoft.VisualStudioTools.Project
         /// <returns>The name of the active configuartion.</returns>
         internal static string GetActiveConfigurationName(EnvDTE.Project automationObject)
         {
-            Utilities.ArgumentNotNull("automationObject", automationObject);
+            Utilities.ArgumentNotNull(nameof(automationObject), automationObject);
 
             var currentConfigName = string.Empty;
             if (automationObject.ConfigurationManager != null)
@@ -435,8 +434,6 @@ namespace Microsoft.VisualStudioTools.Project
         /// </summary>
         /// <param name="name">File name</param>
         /// <returns>true if file name is invalid</returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0",
-            Justification = "The name is validated.")]
         public static bool ContainsInvalidFileNameChars(string name)
         {
             if (string.IsNullOrEmpty(name))
@@ -526,7 +523,7 @@ namespace Microsoft.VisualStudioTools.Project
         /// <returns>A loaded msbuild project.</returns>
         internal static MSBuild.Project InitializeMsBuildProject(MSBuild.ProjectCollection buildEngine, string fullProjectPath)
         {
-            Utilities.ArgumentNotNullOrEmpty("fullProjectPath", fullProjectPath);
+            Utilities.ArgumentNotNullOrEmpty(nameof(fullProjectPath), fullProjectPath);
 
             // Call GetFullPath to expand any relative path passed into this method.
             fullProjectPath = CommonUtils.NormalizePath(fullProjectPath);
@@ -727,8 +724,7 @@ namespace Microsoft.VisualStudioTools.Project
         /// <returns>Whether succeeded</returns>
         public static bool SaveDirtyFiles()
         {
-            var rdt = ServiceProvider.GlobalProvider.GetService(typeof(SVsRunningDocumentTable)) as IVsRunningDocumentTable;
-            if (rdt != null)
+            if (ServiceProvider.GlobalProvider.GetService(typeof(SVsRunningDocumentTable)) is IVsRunningDocumentTable rdt)
             {
                 // Consider using (uint)(__VSRDTSAVEOPTIONS.RDTSAVEOPT_SaveIfDirty | __VSRDTSAVEOPTIONS.RDTSAVEOPT_PromptSave)
                 // when VS settings include prompt for save on build

@@ -126,13 +126,12 @@ namespace Microsoft.VisualStudioTools.Project
             }
 
             var flavoredCfgProvider = this.ProjectMgr.GetOuterInterface<IVsProjectFlavorCfgProvider>();
-            Utilities.ArgumentNotNull("flavoredCfgProvider", flavoredCfgProvider);
+            Utilities.ArgumentNotNull(nameof(flavoredCfgProvider), flavoredCfgProvider);
             ErrorHandler.ThrowOnFailure(flavoredCfgProvider.CreateProjectFlavorCfg(this, out this.flavoredCfg));
-            Utilities.ArgumentNotNull("flavoredCfg", this.flavoredCfg);
+            Utilities.ArgumentNotNull(nameof(flavoredCfg), this.flavoredCfg);
 
             // if the flavored object support XML fragment, initialize it
-            var persistXML = this.flavoredCfg as IPersistXMLFragment;
-            if (null != persistXML)
+            if (this.flavoredCfg is IPersistXMLFragment persistXML)
             {
                 this.project.LoadXmlFragment(persistXML, this.configName, this.platformName);
             }
@@ -410,7 +409,7 @@ namespace Microsoft.VisualStudioTools.Project
 
         public virtual int get_UpdateSequenceNumber(ULARGE_INTEGER[] li)
         {
-            Utilities.ArgumentNotNull("li", li);
+            Utilities.ArgumentNotNull(nameof(li), li);
 
             li[0] = new ULARGE_INTEGER();
             li[0].QuadPart = 0;
@@ -1022,7 +1021,6 @@ namespace Microsoft.VisualStudioTools.Project
 
         #region helpers
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes")]
         private bool NotifyBuildBegin()
         {
             var shouldContinue = 1;
@@ -1046,7 +1044,6 @@ namespace Microsoft.VisualStudioTools.Project
             return true;
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes")]
         private void NotifyBuildEnd(MSBuildResult result, string buildTarget)
         {
             var success = ((result == MSBuildResult.Successful) ? 1 : 0);
@@ -1091,14 +1088,10 @@ namespace Microsoft.VisualStudioTools.Project
             {
                 this.config.ProjectMgr.BuildAsync(options, this.config.ConfigName, output, target, (result, buildTarget) => this.NotifyBuildEnd(result, buildTarget));
             }
-            catch (Exception e)
+            catch (Exception ex) when (!ExceptionExtensions.IsCriticalException(ex))
             {
-                if (e.IsCriticalException())
-                {
-                    throw;
-                }
-                Trace.WriteLine("Exception : " + e.Message);
-                ErrorHandler.ThrowOnFailure(output.OutputStringThreadSafe("Unhandled Exception:" + e.Message + "\n"));
+                Trace.WriteLine("Exception : " + ex.Message);
+                ErrorHandler.ThrowOnFailure(output.OutputStringThreadSafe("Unhandled Exception:" + ex.Message + "\n"));
                 this.NotifyBuildEnd(MSBuildResult.Failed, target);
                 throw;
             }

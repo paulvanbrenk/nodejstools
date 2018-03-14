@@ -1,4 +1,4 @@
-// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
+﻿// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 using System;
 using System.Globalization;
@@ -8,7 +8,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.NodejsTools.Logging;
-using Microsoft.VisualStudioTools;
 using Microsoft.VisualStudioTools.Project;
 using Newtonsoft.Json;
 
@@ -29,7 +28,7 @@ namespace Microsoft.NodejsTools.Debugger.Communication
 
         public DebuggerConnection(INetworkClientFactory networkClientFactory)
         {
-            Utilities.ArgumentNotNull("networkClientFactory", networkClientFactory);
+            Utilities.ArgumentNotNull(nameof(networkClientFactory), networkClientFactory);
 
             this._networkClientFactory = networkClientFactory;
         }
@@ -62,7 +61,7 @@ namespace Microsoft.NodejsTools.Debugger.Communication
         /// <param name="message">Message.</param>
         public void SendMessage(string message)
         {
-            Utilities.ArgumentNotNullOrEmpty("message", message);
+            Utilities.ArgumentNotNullOrEmpty(nameof(message), message);
 
             if (!this.Connected)
             {
@@ -111,7 +110,7 @@ namespace Microsoft.NodejsTools.Debugger.Communication
         /// <param name="uri">URI identifying the endpoint to connect to.</param>
         public void Connect(Uri uri)
         {
-            Utilities.ArgumentNotNull("uri", uri);
+            Utilities.ArgumentNotNull(nameof(uri), uri);
             LiveLogger.WriteLine("Debugger connecting to URI: {0}", uri);
 
             Close();
@@ -143,12 +142,8 @@ namespace Microsoft.NodejsTools.Debugger.Communication
                             throw new SocketException();
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception ex) when (!Microsoft.VisualStudioTools.ExceptionExtensions.IsCriticalException(ex))
                     {
-                        if (ex.IsCriticalException())
-                        {
-                            throw;
-                        }
                         LiveLogger.WriteLine("Connection attempt {0} failed with: {1}", connection_attempts, ex);
                         if (this._isClosed || connection_attempts >= MAX_ATTEMPTS)
                         {

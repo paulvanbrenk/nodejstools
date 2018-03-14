@@ -1,4 +1,4 @@
-// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
+﻿// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 using System;
 using System.Collections.Concurrent;
@@ -15,7 +15,6 @@ using Microsoft.VisualStudio.Settings;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.Shell.Settings;
-using IOleServiceProvider = Microsoft.VisualStudio.OLE.Interop.IServiceProvider;
 
 namespace Microsoft.VisualStudioTools.Project
 {
@@ -84,8 +83,8 @@ namespace Microsoft.VisualStudioTools.Project
         /// </summary>
         public IDEBuildLogger(IVsOutputWindowPane output, TaskProvider taskProvider, IVsHierarchy hierarchy)
         {
-            Utilities.ArgumentNotNull("taskProvider", taskProvider);
-            Utilities.ArgumentNotNull("hierarchy", hierarchy);
+            Utilities.ArgumentNotNull(nameof(taskProvider), taskProvider);
+            Utilities.ArgumentNotNull(nameof(hierarchy), hierarchy);
 
             Trace.WriteLineIf(Thread.CurrentThread.GetApartmentState() != ApartmentState.STA, "WARNING: IDEBuildLogger constructor running on the wrong thread.");
 
@@ -113,9 +112,8 @@ namespace Microsoft.VisualStudioTools.Project
         {
             if (disposing)
             {
-                var sp = this.serviceProvider as ServiceProvider;
                 this.serviceProvider = null;
-                if (sp != null)
+                if (this.serviceProvider is ServiceProvider sp)
                 {
                     sp.Dispose();
                 }
@@ -131,7 +129,7 @@ namespace Microsoft.VisualStudioTools.Project
         /// </summary>
         public override void Initialize(IEventSource eventSource)
         {
-            Utilities.ArgumentNotNull("eventSource", eventSource);
+            Utilities.ArgumentNotNull(nameof(eventSource), eventSource);
 
             this.taskQueue = new ConcurrentQueue<Func<ErrorTask>>();
             this.outputQueue = new ConcurrentQueue<OutputQueueEntry>();
@@ -591,13 +589,8 @@ namespace Microsoft.VisualStudioTools.Project
             {
                 action();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (!ExceptionExtensions.IsCriticalException(ex))
             {
-                if (ex.IsCriticalException())
-                {
-                    throw;
-                }
-
                 ShowErrorMessage(serviceProvider, ex);
             }
         }

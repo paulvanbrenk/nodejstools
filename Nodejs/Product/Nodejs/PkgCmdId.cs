@@ -1,4 +1,4 @@
-// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
+﻿// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 namespace Microsoft.NodejsTools
 {
@@ -9,7 +9,7 @@ namespace Microsoft.NodejsTools
         public const int cmdidSetAsNodejsStartupFile = 0x203;
 
         public const int cmdidImportWizard = 0x205;
- 
+
         public const uint cmdidAzureExplorerAttachNodejsDebugger = 0x207;
 
         public const int cmdidDiagnostics = 0x208;
@@ -23,5 +23,20 @@ namespace Microsoft.NodejsTools
         public const int cmdidNpmUpdateSingleModule = 0x305;
         public const int cmdidNpmOpenModuleHomepage = 0x306;
         public const int menuIdNpm = 0x3000;
+
+        public const int cmdidWorkSpaceNpmInstallMissing = 0x0200;
+        public const int cmdidWorkSpaceNpmInstallNew = 0x0201;
+        public const int cmdidWorkSpaceNpmUpdate = 0x0202;
+        public const int cmdidWorkSpaceNpmDynamicScript = 0x1000;
+
+        // only allow 100 scripts
+        public const int cmdidWorkSpaceNpmDynamicScriptMax = cmdidWorkSpaceNpmDynamicScript + 100;
+
+        // Workspace cmdIds
+        public const int cmdid_DebugActionContext = 0x1000;
+
+        public const int cmdid_BuildActionContext = 0x1000;
+        public const int cmdid_RebuildActionContext = 0x1010;
+        public const int cmdid_CleanActionContext = 0x1020;
     }
 }

@@ -1,7 +1,6 @@
-// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
+﻿// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using Microsoft.VisualStudio.Designer.Interfaces;
 using Microsoft.VisualStudio.OLE.Interop;
@@ -17,7 +16,6 @@ namespace Microsoft.VisualStudioTools.Project
     /// <summary>
     /// Common factory for creating our editor
     /// </summary>    
-    [SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable")]
     public abstract class CommonEditorFactory : IVsEditorFactory
     {
         private Package _package;
@@ -218,8 +216,7 @@ namespace Microsoft.VisualStudioTools.Project
                 if (textLines == null)
                 {
                     // Try get the text buffer from textbuffer provider
-                    var textBufferProvider = dataObject as IVsTextBufferProvider;
-                    if (textBufferProvider != null)
+                    if (dataObject is IVsTextBufferProvider textBufferProvider)
                     {
                         textBufferProvider.GetTextBuffer(out textLines);
                     }
@@ -310,8 +307,7 @@ namespace Microsoft.VisualStudioTools.Project
             ErrorHandler.ThrowOnFailure(window.SetBaseEditorCaption(null));
             ErrorHandler.ThrowOnFailure(window.GetEditorCaption(READONLYSTATUS.ROSTATUS_Unknown, out editorCaption));
 
-            var userData = textLines as IVsUserData;
-            if (userData != null)
+            if (textLines is IVsUserData userData)
             {
                 if (this._promptEncodingOnLoad)
                 {
@@ -341,8 +337,7 @@ namespace Microsoft.VisualStudioTools.Project
 
         protected void InitializeLanguageService(IVsTextLines textLines, Guid langSid)
         {
-            var userData = textLines as IVsUserData;
-            if (userData != null)
+            if (textLines is IVsUserData userData)
             {
                 if (langSid != Guid.Empty)
                 {
