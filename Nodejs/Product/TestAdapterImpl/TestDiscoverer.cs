@@ -62,11 +62,11 @@ namespace Microsoft.NodejsTools.TestAdapter
 
                         var testItems = new Dictionary<string, List<TestFileEntry>>(StringComparer.OrdinalIgnoreCase);
                         // Provide all files to the test analyzer
-                        foreach (var item in proj.Items.Where(item => item.ItemType == "Compile" || item.ItemType == "TypeScriptCompile"))
+                        foreach (var item in proj.Items.Where(item => item.ItemType != "None"))
                         {
                             //Check to see if this is a TestCase
-                            var value = item.GetMetadataValue("TestFramework");
-                            if (!TestContainerDiscoverer.IsValidTestFramework(value))
+                            var testFrameworkName = item.GetMetadataValue("TestFramework");
+                            if (!TestContainerDiscoverer.IsValidTestFramework(testFrameworkName))
                             {
                                 continue;
                             }
@@ -76,15 +76,15 @@ namespace Microsoft.NodejsTools.TestAdapter
                             {
                                 fileAbsolutePath = TypeScript.TypeScriptHelpers.GetTypeScriptBackedJavaScriptFile(proj, fileAbsolutePath);
                             }
-                            else if (!Path.GetExtension(fileAbsolutePath).Equals(".js", StringComparison.OrdinalIgnoreCase))
+                            else if (!StringComparer.OrdinalIgnoreCase.Equals(Path.GetExtension(fileAbsolutePath), ".js"))
                             {
                                 continue;
                             }
 
-                            if (!testItems.TryGetValue(value, out var fileList))
+                            if (!testItems.TryGetValue(testFrameworkName, out var fileList))
                             {
                                 fileList = new List<TestFileEntry>();
-                                testItems.Add(value, fileList);
+                                testItems.Add(testFrameworkName, fileList);
                             }
                             fileList.Add(new TestFileEntry(fileAbsolutePath, typeScriptTest));
                         }

@@ -138,9 +138,12 @@ namespace Microsoft.NodejsTools.TestAdapter.TestFrameworks
                 " " + WrapWithQuotes(discoverResultFile) +
                 " " + WrapWithQuotes(workingDirectory);
 
+#if DEBUG
+            logger.SendMessage(TestMessageLevel.Informational, "Arguments: " + arguments);
+#endif
+
             var processStartInfo = new ProcessStartInfo(nodeExePath, arguments)
             {
-
                 CreateNoWindow = true,
                 UseShellExecute = false,
                 RedirectStandardError = true,
