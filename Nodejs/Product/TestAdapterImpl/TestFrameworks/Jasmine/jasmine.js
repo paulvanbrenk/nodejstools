@@ -114,9 +114,8 @@ function find_tests(testFileList, discoverResultFile, projectFolder) {
         return;
     }
     var jasmineInstance = initializeJasmine(Jasmine, projectFolder);
-    jasmineInstance.env.specFilter = (spec) => {
-        return false;
-    };
+    jasmineInstance.env.specFilter = _ => false;
+
     var testList = [];
     testFileList.split(";").forEach((testFile) => {
         try {

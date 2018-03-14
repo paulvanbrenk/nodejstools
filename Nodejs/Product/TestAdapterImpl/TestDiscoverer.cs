@@ -60,7 +60,7 @@ namespace Microsoft.NodejsTools.TestAdapter
                     {
                         var projectHome = Path.GetFullPath(Path.Combine(proj.DirectoryPath, "."));
 
-                        var testItems = new Dictionary<string, List<TestFileEntry>>(StringComparer.OrdinalIgnoreCase);
+                        var testItems = new Dictionary<string, HashSet<TestFileEntry>>(StringComparer.OrdinalIgnoreCase);
                         // Provide all files to the test analyzer
                         foreach (var item in proj.Items.Where(item => item.ItemType != "None"))
                         {
@@ -83,7 +83,7 @@ namespace Microsoft.NodejsTools.TestAdapter
 
                             if (!testItems.TryGetValue(testFrameworkName, out var fileList))
                             {
-                                fileList = new List<TestFileEntry>();
+                                fileList = new HashSet<TestFileEntry>();
                                 testItems.Add(testFrameworkName, fileList);
                             }
                             fileList.Add(new TestFileEntry(fileAbsolutePath, typeScriptTest));
@@ -106,7 +106,7 @@ namespace Microsoft.NodejsTools.TestAdapter
             }
         }
 
-        private void DiscoverTests(Dictionary<string, List<TestFileEntry>> testItems, MSBuild.Project proj, ITestCaseDiscoverySink discoverySink, IMessageLogger logger)
+        private void DiscoverTests(Dictionary<string, HashSet<TestFileEntry>> testItems, MSBuild.Project proj, ITestCaseDiscoverySink discoverySink, IMessageLogger logger)
         {
             var result = new List<TestFrameworks.NodejsTestInfo>();
             var projectHome = Path.GetFullPath(Path.Combine(proj.DirectoryPath, "."));
@@ -137,7 +137,7 @@ namespace Microsoft.NodejsTools.TestAdapter
                 var files = string.Join(";", fileList.Select(p => p.File));
                 logger.SendMessage(TestMessageLevel.Informational, string.Format(CultureInfo.CurrentCulture, "Processing: {0}", files));
 
-                var discoveredTestCases = testFramework.FindTests(fileList.Select(p => p.File), nodeExePath, logger, projectRoot:projectHome);
+                var discoveredTestCases = testFramework.FindTests(fileList.Select(p => p.File), nodeExePath, logger, projectRoot: projectHome);
                 testCount += discoveredTestCases.Count;
                 foreach (var discoveredTest in discoveredTestCases)
                 {
@@ -145,7 +145,7 @@ namespace Microsoft.NodejsTools.TestAdapter
                     logger.SendMessage(TestMessageLevel.Informational, string.Format(CultureInfo.CurrentCulture, "  " /*indent*/ + "Creating TestCase:{0}", qualifiedName));
                     //figure out the test source info such as line number
                     var filePath = discoveredTest.ModulePath;
-                    var entry = fileList.Find(p => p.File.Equals(filePath, StringComparison.OrdinalIgnoreCase));
+                    var entry = fileList.First(p => StringComparer.OrdinalIgnoreCase.Equals(p.File, filePath));
                     FunctionInformation fi = null;
                     if (entry.IsTypeScriptTest)
                     {
@@ -157,8 +157,8 @@ namespace Microsoft.NodejsTools.TestAdapter
                     discoverySink.SendTestCase(
                         new TestCase(qualifiedName, TestExecutor.ExecutorUri, projSource)
                         {
-                            CodeFilePath = (fi != null) ? fi.Filename : filePath,
-                            LineNumber = (fi != null && fi.LineNumber.HasValue) ? fi.LineNumber.Value : discoveredTest.SourceLine,
+                            CodeFilePath = fi?.Filename ?? filePath,
+                            LineNumber = fi?.LineNumber ?? discoveredTest.SourceLine,
                             DisplayName = discoveredTest.TestName
                         });
                 }
@@ -187,15 +187,20 @@ namespace Microsoft.NodejsTools.TestAdapter
             return buildEngine.LoadProject(fullProjectPath);
         }
 
-        private class TestFileEntry
+        private sealed class TestFileEntry : IComparable<TestFileEntry>
         {
-            public string File { get; set; }
-            public bool IsTypeScriptTest { get; set; }
+            public readonly string File;
+            public readonly bool IsTypeScriptTest;
 
             public TestFileEntry(string file, bool isTypeScriptTest)
             {
                 this.File = file;
                 this.IsTypeScriptTest = isTypeScriptTest;
+            }
+
+            public int CompareTo(TestFileEntry other)
+            {
+                return StringComparer.OrdinalIgnoreCase.Compare(this.File, other?.File);
             }
         }
     }

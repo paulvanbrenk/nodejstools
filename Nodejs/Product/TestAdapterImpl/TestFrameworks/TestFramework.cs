@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 
 namespace Microsoft.NodejsTools.TestAdapter.TestFrameworks
 {
-    internal class TestFramework
+    internal sealed class TestFramework
     {
         private readonly string vsixScriptFolder;
         private readonly string findTestsScriptFile;
@@ -82,7 +82,7 @@ namespace Microsoft.NodejsTools.TestAdapter.TestFrameworks
             }
 
             var testCases = new List<NodejsTestInfo>();
-            var discoveredTests = (List<DiscoveredTest>)JsonConvert.DeserializeObject(testInfo, typeof(List<DiscoveredTest>));
+            var discoveredTests = JsonConvert.DeserializeObject<List<DiscoveredTest>>(testInfo);
             if (discoveredTests != null)
             {
                 foreach (var discoveredTest in discoveredTests)
@@ -110,7 +110,7 @@ namespace Microsoft.NodejsTools.TestAdapter.TestFrameworks
             };
         }
 
-        private string WrapWithQuotes(string path)
+        private static string WrapWithQuotes(string path)
         {
             if (!path.StartsWith("\"", StringComparison.Ordinal) && !path.StartsWith("\'", StringComparison.Ordinal))
             {
@@ -124,7 +124,7 @@ namespace Microsoft.NodejsTools.TestAdapter.TestFrameworks
         /// </summary>
         /// <param name="testName">Name of the test to excape for command line usage.</param>
         /// <returns>Name of the test, escaped according to the command line rules.</returns>
-        private string WrapTestNameWithQuotes(string testName)
+        private static string WrapTestNameWithQuotes(string testName)
         {
             return "\"" + testName.Replace("\"", "\\\"") + "\"";
         }
@@ -178,13 +178,13 @@ namespace Microsoft.NodejsTools.TestAdapter.TestFrameworks
             }
             catch (FileNotFoundException e)
             {
-                logger.SendMessage(TestMessageLevel.Error, string.Format(CultureInfo.InvariantCulture, "Error starting node.exe.\n {0}", e));
+                logger.SendMessage(TestMessageLevel.Error, string.Format(CultureInfo.InvariantCulture, "Error starting node.exe.\r\n {0}", e));
             }
 
             return stdout;
         }
 
-        private class DiscoveredTest
+        private sealed class DiscoveredTest
         {
             public string Test { get; set; }
             public string Suite { get; set; }

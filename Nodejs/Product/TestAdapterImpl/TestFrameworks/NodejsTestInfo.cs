@@ -27,12 +27,11 @@ namespace Microsoft.NodejsTools.TestAdapter.TestFrameworks
         public NodejsTestInfo(string modulePath, string testName, string testFramework, int line, int column, string projectRootDir)
         {
             var relativePath = CommonUtils.GetRelativeFilePath(projectRootDir, modulePath);
-            var moduleName = Regex.Replace(relativePath, @"[ \\/]", "_"); // use regex to replace spaces and slashes with '_' 
 
             var fileName = Path.GetFileNameWithoutExtension(modulePath);
 
             this.ModulePath = modulePath;
-            this.ModuleName = moduleName;
+            this.ModuleName = relativePath;
             this.TestName = testName;
             this.TestFramework = testFramework;
             this.SourceLine = line;
