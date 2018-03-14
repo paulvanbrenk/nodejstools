@@ -162,7 +162,7 @@ namespace Microsoft.NodejsTools.TestAdapter
                             DisplayName = discoveredTest.TestName
                         });
                 }
-                logger.SendMessage(TestMessageLevel.Informational, string.Format(CultureInfo.CurrentCulture, "Processing finished for framework of {0}", testFx));
+                logger.SendMessage(TestMessageLevel.Informational, string.Format(CultureInfo.CurrentCulture, "Processing finished for framework \'{0}\'.", testFx));
             }
             if (testCount == 0)
             {
@@ -187,7 +187,7 @@ namespace Microsoft.NodejsTools.TestAdapter
             return buildEngine.LoadProject(fullProjectPath);
         }
 
-        private sealed class TestFileEntry : IComparable<TestFileEntry>
+        private sealed class TestFileEntry : IEqualityComparer<TestFileEntry>
         {
             public readonly string File;
             public readonly bool IsTypeScriptTest;
@@ -198,10 +198,13 @@ namespace Microsoft.NodejsTools.TestAdapter
                 this.IsTypeScriptTest = isTypeScriptTest;
             }
 
-            public int CompareTo(TestFileEntry other)
-            {
-                return StringComparer.OrdinalIgnoreCase.Compare(this.File, other?.File);
-            }
+            public override bool Equals(object obj) => this.Equals(this, obj as TestFileEntry);
+
+            public bool Equals(TestFileEntry x, TestFileEntry y) => StringComparer.OrdinalIgnoreCase.Equals(x?.File, y?.File);
+
+            public override int GetHashCode() => this.File.GetHashCode();
+
+            public int GetHashCode(TestFileEntry obj) => obj?.GetHashCode() ?? 0;
         }
     }
 }
