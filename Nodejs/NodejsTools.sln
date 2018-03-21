@@ -32,7 +32,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodejsTools", "Setup\Nodejs
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Setup", "Setup", "{8AB8B6AC-77EB-47E7-904F-422588542C4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavaScriptProjectTemplates", "Product\JavaScriptProjectTemplates\JavaScriptProjectTemplates.csproj", "{CBE53CC0-8A50-46D9-A223-7003FF854DCA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTemplates", "Product\ProjectTemplates\ProjectTemplates.csproj", "{CBE53CC0-8A50-46D9-A223-7003FF854DCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

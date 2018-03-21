@@ -38,21 +38,10 @@
     <DefineConstants>$(DefineConstants);NODEJS_TOOLS;NTVS_FEATURE_INTERACTIVEWINDOW</DefineConstants>
   </PropertyGroup>
   <ItemDefinitionGroup>
-    <ZipProject>
-      <Language>JavaScript</Language>
-      <Culture>1033</Culture>
-      <OutputSubPath>Node.js</OutputSubPath>
-      <VSIXSubpath>ProjectTemplates</VSIXSubpath>
-    </ZipProject>
     <ZipItem>
       <Language>JavaScript</Language>
       <VSIXSubpath>ItemTemplates</VSIXSubpath>
     </ZipItem>
-    <!--<VSTemplate>
-      <Language>JavaScript</Language>
-      <Culture>1033</Culture>
-      <OutputSubPath>Node.js</OutputSubPath>
-    </VSTemplate>-->
   </ItemDefinitionGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.ImageCatalog, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -808,7 +797,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ProjectTemplates\" />
     <Folder Include="RemoteDebug\" />
   </ItemGroup>
   <ItemGroup>
@@ -1074,16 +1062,6 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <Target Name="TransformTypeScriptProjects" BeforeTargets="CalculateZipFiles">
-    <ItemGroup>
-      <ZipProject Include="@(TypeScriptProject)">
-        <Language>TypeScript</Language>
-        <Culture>1033</Culture>
-        <OutputSubPath>Node.js</OutputSubPath>
-        <VSIXSubpath>ProjectTemplates</VSIXSubpath>
-      </ZipProject>
-    </ItemGroup>
-  </Target>
   <PropertyGroup>
     <PostBuildEvent>
       mkdir $(OutDir)RemoteDebug\

@@ -25,7 +25,7 @@
         <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="ProjectWizard" Path="|ProjectWizard|" AssemblyName="|ProjectWizard;AssemblyName|" />
         <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="Project" d:ProjectName="Nodejs" d:TargetPath="|Nodejs;TemplateProjectOutputGroup|" Path="ProjectTemplates" d:VsixSubPath="ProjectTemplates" />
         <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="Project" d:ProjectName="Nodejs" d:TargetPath="|Nodejs;TemplateProjectOutputGroup|" Path="ItemTemplates" d:VsixSubPath="ItemTemplates" />
-        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="Project" d:ProjectName="JavaScriptProjectTemplates" d:TargetPath="|JavaScriptProjectTemplates;TemplateProjectOutputGroup|" Path="ProjectTemplates" d:VsixSubPath="ProjectTemplates" />
+        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="Project" d:ProjectName="ProjectTemplates" d:TargetPath="|ProjectTemplates;TemplateProjectOutputGroup|" Path="ProjectTemplates" d:VsixSubPath="ProjectTemplates" />
     </Assets>
     <Prerequisites>
         <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />
