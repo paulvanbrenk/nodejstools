@@ -40,6 +40,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\JavaScriptProjectTemplates\JavaScriptProjectTemplates.csproj">
+      <Project>{CBE53CC0-8A50-46D9-A223-7003FF854DCA}</Project>
+      <Name>JavaScriptProjectTemplates</Name>
+      <VSIXSubPath>ProjectTemplates</VSIXSubPath>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+    </ProjectReference>
     <ProjectReference Include="..\Nodejs\Nodejs.csproj">
       <Project>{32ec5259-98da-40ca-9e2d-1b1b2e966f88}</Project>
       <Name>Nodejs</Name>

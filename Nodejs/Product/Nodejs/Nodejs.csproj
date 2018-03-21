@@ -604,29 +604,11 @@
     <ZipItem Include="Templates\Files\EmptyTs\EmptyTs.vstemplate" />
     <ZipItem Include="Templates\Files\EmptyXml\EmptyXml.vstemplate" />
     <ZipItem Include="Templates\Files\EmptyXml\EmptyXml.xml" />
-    <ZipProject Include="ProjectTemplates\CloudService\CloudService.ccproj" />
-    <ZipProject Include="ProjectTemplates\CloudService\ServiceConfiguration.Cloud.cscfg" />
-    <ZipProject Include="ProjectTemplates\CloudService\ServiceConfiguration.Local.cscfg" />
-    <ZipProject Include="ProjectTemplates\CloudService\ServiceDefinition.csdef" />
     <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebRole\package.json" />
     <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebRole\README.md" />
     <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebRole\TypeScriptWebApp.njsproj" />
     <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebRole\Web.config" />
     <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebRole\Web.Debug.config" />
-    <ZipProject Include="ProjectTemplates\Express4App\index.pug" />
-    <ZipProject Include="ProjectTemplates\Express4App\layout.pug" />
-    <ZipProject Include="ProjectTemplates\Express4App\package.json" />
-    <ZipProject Include="ProjectTemplates\Express4App\README.md" />
-    <ZipProject Include="ProjectTemplates\Express4App\main.css" />
-    <ZipProject Include="ProjectTemplates\Express4App\error.pug" />
-    <ZipProject Include="ProjectTemplates\AzureExpress4App\error.pug" />
-    <ZipProject Include="ProjectTemplates\AzureExpress4App\index.pug" />
-    <ZipProject Include="ProjectTemplates\AzureExpress4App\layout.pug" />
-    <ZipProject Include="ProjectTemplates\AzureExpress4App\package.json" />
-    <ZipProject Include="ProjectTemplates\AzureExpress4App\README.md" />
-    <ZipProject Include="ProjectTemplates\AzureExpress4App\main.css" />
-    <ZipProject Include="ProjectTemplates\AzureExpress4App\Web.config" />
-    <ZipProject Include="ProjectTemplates\AzureExpress4App\Web.Debug.config" />
     <ZipItem Include="Templates\Files\TypeScriptJSX\EmptyTsx.tsx" />
     <ZipItem Include="Templates\Files\TypeScriptJSX\EmptyTsx.vstemplate" />
     <ZipItem Include="Templates\Files\TapeUnitTest\UnitTest.js" />
@@ -647,9 +629,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Theme\make_theme_pkgdef.py" />
-    <ZipProject Include="ProjectTemplates\NodejsWebApp\Preview.png" />
-    <ZipProject Include="ProjectTemplates\AzureNodejsApp\Preview.png" />
-    <ZipProject Include="ProjectTemplates\NodejsConsoleApp\Preview.png" />
     <Resource Include="..\Icons\NewProjectDialogIconsICO\JSAzureApplication.ico">
       <Link>Resources\Icons\NewProjectDialogIconsICO\JSAzureApplication.ico</Link>
     </Resource>
@@ -684,12 +663,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <ZipProject Include="ProjectTemplates\FromExistingCode\FromExistingCode.njsproj">
-      <SubType>Designer</SubType>
-    </ZipProject>
-    <ZipProject Include="ProjectTemplates\FromExistingCode\FromExistingCode.vstemplate">
-      <SubType>Designer</SubType>
-    </ZipProject>
     <!-- Start of TypeScript templates -->
     <!-- Blank Node.js console application -->
     <TypeScriptProject Include="ProjectTemplates\TypeScriptConsoleApp\NodejsConsoleApp.vstemplate" />
@@ -805,43 +778,10 @@
       <Link>Resources\Icons\TSProject_SolutionExplorerNode.png</Link>
       <LogicalName>Microsoft.VisualStudioTools.Resources.Icons.TSProject_SolutionExplorerNode.png</LogicalName>
     </EmbeddedResource>
-    <ZipProject Include="ProjectTemplates\CloudService\cloudservice.ico" />
-    <ZipProject Include="ProjectTemplates\CloudService\CloudService.vstemplate" />
     <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebRole\Preview.png" />
     <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebRole\TypeScriptAzureWebRole.vstemplate">
       <SubType>Designer</SubType>
     </TypeScriptProject>
-    <ZipProject Include="ProjectTemplates\Express4App\app.js" />
-    <ZipProject Include="ProjectTemplates\Express4App\ExpressApp.njsproj">
-      <SubType>Designer</SubType>
-    </ZipProject>
-    <ZipProject Include="ProjectTemplates\Express4App\ExpressApp.vstemplate">
-      <SubType>Designer</SubType>
-    </ZipProject>
-    <ZipProject Include="ProjectTemplates\Express4App\index.js" />
-    <ZipProject Include="ProjectTemplates\Express4App\Preview.png" />
-    <ZipProject Include="ProjectTemplates\Express4App\users.js" />
-    <ZipProject Include="ProjectTemplates\AzureExpress4App\app.js" />
-    <ZipProject Include="ProjectTemplates\AzureExpress4App\ExpressApp.njsproj">
-      <SubType>Designer</SubType>
-    </ZipProject>
-    <ZipProject Include="ProjectTemplates\AzureExpress4App\AzureExpress4App.vstemplate">
-      <SubType>Designer</SubType>
-    </ZipProject>
-    <ZipProject Include="ProjectTemplates\AzureExpress4App\index.js" />
-    <ZipProject Include="ProjectTemplates\AzureExpress4App\Preview.png" />
-    <ZipProject Include="ProjectTemplates\AzureExpress4App\users.js" />
-    <ZipProject Include="ProjectTemplates\AzureNodejsWorker\Worker.njsproj">
-      <SubType>Designer</SubType>
-    </ZipProject>
-    <ZipProject Include="ProjectTemplates\AzureNodejsWorker\Preview.png" />
-    <ZipProject Include="ProjectTemplates\AzureNodejsWorker\worker.js" />
-    <ZipProject Include="ProjectTemplates\AzureNodejsWorker\startup.js" />
-    <ZipProject Include="ProjectTemplates\AzureNodejsWorker\AzureNodejsWorker.vstemplate">
-      <SubType>Designer</SubType>
-    </ZipProject>
-    <ZipProject Include="ProjectTemplates\AzureNodejsWorker\package.json" />
-    <ZipProject Include="ProjectTemplates\AzureNodejsWorker\README.md" />
     <ZipItem Include="Templates\Files\MochaUnitTest\UnitTest.vstemplate">
       <SubType>Designer</SubType>
     </ZipItem>
@@ -871,29 +811,6 @@
       <IncludeInVSIX>false</IncludeInVSIX>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <ZipProject Include="ProjectTemplates\AzureNodejsApp\AzureNodejsApp.vstemplate">
-      <SubType>Designer</SubType>
-    </ZipProject>
-    <ZipProject Include="ProjectTemplates\AzureNodejsApp\server.js" />
-    <ZipProject Include="ProjectTemplates\AzureNodejsApp\AzureNodejsApp.njsproj">
-      <SubType>Designer</SubType>
-    </ZipProject>
-    <ZipProject Include="ProjectTemplates\AzureNodejsApp\package.json" />
-    <ZipProject Include="ProjectTemplates\AzureNodejsApp\README.md" />
-    <ZipProject Include="ProjectTemplates\AzureNodejsApp\Web.Debug.config">
-      <SubType>Designer</SubType>
-    </ZipProject>
-    <ZipProject Include="ProjectTemplates\AzureNodejsApp\Web.config" />
-    <ZipProject Include="ProjectTemplates\NodejsWebApp\NodejsWebApp.njsproj">
-      <SubType>Designer</SubType>
-    </ZipProject>
-    <ZipProject Include="ProjectTemplates\NodejsWebApp\package.json" />
-    <ZipProject Include="ProjectTemplates\NodejsWebApp\README.md" />
-    <ZipProject Include="ProjectTemplates\NodejsConsoleApp\package.json" />
-    <ZipProject Include="ProjectTemplates\NodejsConsoleApp\README.md" />
-    <ZipProject Include="ProjectTemplates\NodejsConsoleApp\app.js" />
-    <ZipProject Include="ProjectTemplates\NodejsConsoleApp\NodejsConsoleApp.njsproj" />
-    <ZipProject Include="ProjectTemplates\NodejsConsoleApp\NodejsConsoleApp.vstemplate" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
@@ -959,15 +876,11 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ZipProject Include="ProjectTemplates\NodejsWebApp\server.js" />
     <Content Include="visualstudio_nodejs_repl.js">
       <IncludeInVSIX>true</IncludeInVSIX>
       <VSIXSubpath>.</VSIXSubpath>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <ZipProject Include="ProjectTemplates\NodejsWebApp\NodejsWebApp.vstemplate">
-      <SubType>Designer</SubType>
-    </ZipProject>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Npm\Npm.csproj">
