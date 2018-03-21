@@ -1,0 +1,17 @@
+{
+  "name": "$npmsafeprojectname$",
+  "version": "0.0.0",
+  "description": "$projectname$",
+  "scripts": {
+    "start": "node server"
+  },
+  "author": {
+    "name": ""
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.87"
+  },
+  "engines": {
+    "node": "~6.10.x"
+  }
+}

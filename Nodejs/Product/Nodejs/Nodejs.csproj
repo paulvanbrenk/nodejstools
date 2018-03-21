@@ -604,11 +604,6 @@
     <ZipItem Include="Templates\Files\EmptyTs\EmptyTs.vstemplate" />
     <ZipItem Include="Templates\Files\EmptyXml\EmptyXml.vstemplate" />
     <ZipItem Include="Templates\Files\EmptyXml\EmptyXml.xml" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebRole\package.json" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebRole\README.md" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebRole\TypeScriptWebApp.njsproj" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebRole\Web.config" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebRole\Web.Debug.config" />
     <ZipItem Include="Templates\Files\TypeScriptJSX\EmptyTsx.tsx" />
     <ZipItem Include="Templates\Files\TypeScriptJSX\EmptyTsx.vstemplate" />
     <ZipItem Include="Templates\Files\TapeUnitTest\UnitTest.js" />
@@ -665,95 +660,11 @@
     </Content>
     <!-- Start of TypeScript templates -->
     <!-- Blank Node.js console application -->
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptConsoleApp\NodejsConsoleApp.vstemplate" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptConsoleApp\NodejsConsoleApp.njsproj">
-      <SubType>Designer</SubType>
-    </TypeScriptProject>
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptConsoleApp\app.ts" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptConsoleApp\package.json" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptConsoleApp\Preview.png" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptConsoleApp\README.md" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptConsoleApp\tsconfig.json" />
     <!-- Blank Node.js web application -->
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptWebApp\NodejsWebApp.vstemplate" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptWebApp\NodejsWebApp.njsproj">
-      <SubType>Designer</SubType>
-    </TypeScriptProject>
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptWebApp\package.json" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptWebApp\Preview.png" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptWebApp\README.md" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptWebApp\server.ts" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptWebApp\tsconfig.json" />
     <!-- Blank Azure Node.js web application -->
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebApp\TypeScriptWebApp.vstemplate">
-      <SubType>Designer</SubType>
-    </TypeScriptProject>
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebApp\TypeScriptWebApp.njsproj">
-      <SubType>Designer</SubType>
-    </TypeScriptProject>
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebApp\package.json" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebApp\Preview.png" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebApp\README.md" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebApp\server.ts" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebApp\tsconfig.json" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebApp\Web.config" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebApp\Web.Debug.config" />
     <!-- Basic Node.js Express 4 application -->
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptExpressApp\ExpressApp.vstemplate">
-      <SubType>Designer</SubType>
-    </TypeScriptProject>
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptExpressApp\ExpressApp.njsproj">
-      <SubType>Designer</SubType>
-    </TypeScriptProject>
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptExpressApp\app.ts" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptExpressApp\error.pug" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptExpressApp\index.pug" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptExpressApp\index.ts" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptExpressApp\layout.pug" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptExpressApp\main.css" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptExpressApp\package.json" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptExpressApp\Preview.png" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptExpressApp\README.md" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptExpressApp\tsconfig.json" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptExpressApp\user.ts" />
     <!-- Basic Azure Node.js Express 4 application -->
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureExpressApp\TypeScriptAzureExpressApp.vstemplate">
-      <SubType>Designer</SubType>
-    </TypeScriptProject>
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureExpressApp\TypeScriptExpressApp.njsproj">
-      <SubType>Designer</SubType>
-    </TypeScriptProject>
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureExpressApp\app.ts" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureExpressApp\error.pug" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureExpressApp\index.pug" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureExpressApp\index.ts" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureExpressApp\layout.pug" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureExpressApp\main.css" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureExpressApp\package.json" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureExpressApp\Preview.png" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureExpressApp\README.md" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureExpressApp\tsconfig.json" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureExpressApp\user.ts" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureExpressApp\Web.config" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureExpressApp\Web.Debug.config" />
     <!-- Misc -->
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureNodejsWorker\TypeScriptAzureNodejsWorker.vstemplate">
-      <SubType>Designer</SubType>
-    </TypeScriptProject>
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureNodejsWorker\Worker.njsproj">
-      <SubType>Designer</SubType>
-    </TypeScriptProject>
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureNodejsWorker\package.json" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureNodejsWorker\Preview.png" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureNodejsWorker\README.md" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureNodejsWorker\server.ts" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureNodejsWorker\startup.ts" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptFromExistingCode\FromExistingCode.njsproj">
-      <SubType>Designer</SubType>
-    </TypeScriptProject>
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptFromExistingCode\FromExistingCode.vstemplate">
-      <SubType>Designer</SubType>
-    </TypeScriptProject>
     <!-- End of TypeScript templates -->
     <Content Include="GeneratedHelpAboutVersion.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -778,10 +689,6 @@
       <Link>Resources\Icons\TSProject_SolutionExplorerNode.png</Link>
       <LogicalName>Microsoft.VisualStudioTools.Resources.Icons.TSProject_SolutionExplorerNode.png</LogicalName>
     </EmbeddedResource>
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebRole\Preview.png" />
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebRole\TypeScriptAzureWebRole.vstemplate">
-      <SubType>Designer</SubType>
-    </TypeScriptProject>
     <ZipItem Include="Templates\Files\MochaUnitTest\UnitTest.vstemplate">
       <SubType>Designer</SubType>
     </ZipItem>
@@ -901,9 +808,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptProject Include="ProjectTemplates\TypeScriptAzureWebRole\server.ts" />
-  </ItemGroup>
-  <ItemGroup>
+    <Folder Include="ProjectTemplates\" />
     <Folder Include="RemoteDebug\" />
   </ItemGroup>
   <ItemGroup>
