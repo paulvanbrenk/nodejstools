@@ -579,33 +579,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <ZipItem Include="Templates\Files\EmptyCss\EmptyCss.css" />
-    <ZipItem Include="Templates\Files\EmptyCss\EmptyCss.vstemplate" />
-    <ZipItem Include="Templates\Files\EmptyHtml\EmptyHtml.html" />
-    <ZipItem Include="Templates\Files\EmptyHtml\EmptyHtml.vstemplate" />
-    <ZipItem Include="Templates\Files\EmptyJson\EmptyJson.vstemplate" />
-    <ZipItem Include="Templates\Files\EmptyJs\EmptyJs.js" />
-    <ZipItem Include="Templates\Files\EmptyJs\EmptyJs.vstemplate" />
-    <ZipItem Include="Templates\Files\EmptyJsx\EmptyJsx.jsx" />
-    <ZipItem Include="Templates\Files\EmptyJsx\EmptyJsx.vstemplate" />
-    <ZipItem Include="Templates\Files\EmptyLess\EmptyLess.vstemplate" />
-    <ZipItem Include="Templates\Files\EmptyPug\EmptyPug.vstemplate" />
-    <ZipItem Include="Templates\Files\EmptyTs\EmptyTs.vstemplate" />
-    <ZipItem Include="Templates\Files\EmptyXml\EmptyXml.vstemplate" />
-    <ZipItem Include="Templates\Files\EmptyXml\EmptyXml.xml" />
-    <ZipItem Include="Templates\Files\TypeScriptJSX\EmptyTsx.tsx" />
-    <ZipItem Include="Templates\Files\TypeScriptJSX\EmptyTsx.vstemplate" />
-    <ZipItem Include="Templates\Files\TapeUnitTest\UnitTest.js" />
-    <ZipItem Include="Templates\Files\TapeUnitTest\UnitTest.vstemplate" />
-    <ZipItem Include="Templates\Files\TypeScriptTapeUnitTest\UnitTest.vstemplate" />
-    <ZipItem Include="Templates\Files\TypeScriptTapeUnitTest\UnitTest.ts" />
-    <ZipItem Include="Templates\Files\TypeScriptTsConfig\tsconfig.json" />
-    <ZipItem Include="Templates\Files\TypeScriptTsConfig\tsconfig.vstemplate" />
-    <ZipItem Include="Templates\Files\EmptyJson\EmptyJson.json" />
-    <ZipItem Include="Templates\Files\EmptyLess\EmptyLess.less" />
-    <ZipItem Include="Templates\Files\EmptyPug\EmptyPug.pug" />
     <Compile Include="SharedProject\CommonProjectNode.DiskMerger.cs" />
-    <ZipItem Include="Templates\Files\TypeScriptJsConfig\jsconfig.json" />
     <None Include="Theme\contrast.vstheme">
       <SubType>Designer</SubType>
     </None>
@@ -678,31 +652,7 @@
       <Link>Resources\Icons\TSProject_SolutionExplorerNode.png</Link>
       <LogicalName>Microsoft.VisualStudioTools.Resources.Icons.TSProject_SolutionExplorerNode.png</LogicalName>
     </EmbeddedResource>
-    <ZipItem Include="Templates\Files\MochaUnitTest\UnitTest.vstemplate">
-      <SubType>Designer</SubType>
-    </ZipItem>
-    <ZipItem Include="Templates\Files\MochaUnitTest\UnitTest.js" />
-    <ZipItem Include="Templates\Files\TypeScriptMochaUnitTest\UnitTest.ts" />
-    <ZipItem Include="Templates\Files\TypeScriptMochaUnitTest\UnitTest.vstemplate">
-      <SubType>Designer</SubType>
-    </ZipItem>
-    <ZipItem Include="Templates\Files\UnitTest\UnitTest.js" />
-    <ZipItem Include="Templates\Files\UnitTest\UnitTest.vstemplate">
-      <SubType>Designer</SubType>
-    </ZipItem>
-    <ZipItem Include="Templates\Files\TypeScriptUnitTest\UnitTest.ts" />
-    <ZipItem Include="Templates\Files\TypeScriptUnitTest\UnitTest.vstemplate">
-      <SubType>Designer</SubType>
-    </ZipItem>
     <None Include="Theme\Microsoft.NodejsTools.theme.v15.0.pkgdef" />
-    <ZipItem Include="Templates\Files\JasmineUnitTest\UnitTest.js" />
-    <ZipItem Include="Templates\Files\JasmineUnitTest\UnitTest.vstemplate">
-      <SubType>Designer</SubType>
-    </ZipItem>
-    <ZipItem Include="Templates\Files\TypeScriptJasmineUnitTest\UnitTest.vstemplate">
-      <SubType>Designer</SubType>
-    </ZipItem>
-    <ZipItem Include="Templates\Files\TypeScriptJsConfig\jsconfig.vstemplate" />
     <Content Include="VSTemplateStore.pkgdef">
       <IncludeInVSIX>false</IncludeInVSIX>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -712,18 +662,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <_WebRoleZipItem Include="Templates\Files\CloudServiceWebRole\WebRole.vstemplate" />
-    <_WebRoleZipItem Include="Templates\Files\CloudServiceWebRole\roletemplatedata.xml" />
-    <_WebRoleZipItem Include="Templates\Files\CloudServiceTypeScriptWebRole\roletemplatedata.xml" />
-    <_WebRoleZipItem Include="Templates\Files\CloudServiceTypeScriptWebRole\TypeScriptWebRole.vstemplate" />
-    <_WebRoleZipItem Include="Templates\Files\CloudServiceExpressWebRole\ExpressWebRole.vstemplate" />
-    <_WebRoleZipItem Include="Templates\Files\CloudServiceExpressWebRole\roletemplatedata.xml" />
-    <_WebRoleZipItem Include="Templates\Files\CloudServiceTypeScriptExpressWebRole\roletemplatedata.xml" />
-    <_WebRoleZipItem Include="Templates\Files\CloudServiceTypeScriptExpressWebRole\TypeScriptExpressWebRole.vstemplate" />
-    <_WorkerRoleZipItem Include="Templates\Files\CloudServiceTypeScriptWorkerRole\roletemplatedata.xml" />
-    <_WorkerRoleZipItem Include="Templates\Files\CloudServiceTypeScriptWorkerRole\TypeScriptWorkerRole.vstemplate" />
-    <_WorkerRoleZipItem Include="Templates\Files\CloudServiceWorkerRole\roletemplatedata.xml" />
-    <_WorkerRoleZipItem Include="Templates\Files\CloudServiceWorkerRole\WorkerRole.vstemplate" />
     <ZipItem Include="@(_WebRoleZipItem)">
       <OutputSubPath>NETFramework4\Web Role\Node.js</OutputSubPath>
       <Language>CloudService</Language>
@@ -798,9 +736,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="RemoteDebug\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ZipItem Include="Templates\Files\EmptyTs\EmptyTs.ts" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SharedProject\Navigation\SourceLocation.cs" />
@@ -1029,9 +964,6 @@
     <PackageReference Include="System.ValueTuple">
       <Version>4.4.0</Version>
     </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ZipItem Include="Templates\Files\TypeScriptJasmineUnitTest\UnitTest.ts" />
   </ItemGroup>
   <PropertyGroup>
     <!--

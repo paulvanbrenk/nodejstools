@@ -52,11 +52,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Project\AzureExpress4App\views\error.pug" />
     <None Include="Project\AzureExpress4App\ExpressApp.njsproj" />
     <None Include="Project\AzureExpress4App\views\index.pug" />
@@ -132,8 +128,6 @@
     <None Include="Project\TypeScriptWebApp\package.json" />
     <None Include="Project\TypeScriptWebApp\README.md" />
     <None Include="Project\TypeScriptWebApp\tsconfig.json" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Project\NodejsConsoleApp\app.js" />
     <VSTemplate Include="Project\NodejsConsoleApp\NodejsConsoleApp.vstemplate">
       <OutputSubPath>Node.js</OutputSubPath>
@@ -144,22 +138,6 @@
     </VSTemplate>
     <None Include="Project\NodejsWebApp\Preview.png" />
     <None Include="Project\NodejsWebApp\server.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Project\AzureExpress4App\node_modules\" />
-    <Folder Include="Project\AzureNodejsApp\node_modules\" />
-    <Folder Include="Project\AzureNodejsWorker\node_modules\" />
-    <Folder Include="Project\Express4App\node_modules\" />
-    <Folder Include="Project\NodejsWebApp\node_modules\" />
-    <Folder Include="Project\TypeScriptAzureExpressApp\node_modules\" />
-    <Folder Include="Project\TypeScriptAzureNodejsWorker\node_modules\" />
-    <Folder Include="Project\TypeScriptAzureWebApp\node_modules\" />
-    <Folder Include="Project\TypeScriptAzureWebRole\node_modules\" />
-    <Folder Include="Project\TypeScriptConsoleApp\node_modules\" />
-    <Folder Include="Project\TypeScriptExpressApp\node_modules\" />
-    <Folder Include="Project\TypeScriptWebApp\node_modules\" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Project\AzureExpress4App\app.js" />
     <VSTemplate Include="Project\AzureExpress4App\AzureExpress4App.vstemplate">
       <OutputSubPath>Node.js</OutputSubPath>
@@ -187,21 +165,11 @@
     <VSTemplate Include="Project\FromExistingCode\FromExistingCode.vstemplate">
       <OutputSubPath>Node.js</OutputSubPath>
     </VSTemplate>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Project\Express4App\public\stylesheets\main.css" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Project\Express4App\routes\index.js" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Project\Express4App\routes\users.js" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Project\TypeScriptConsoleApp\app.ts" />
     <None Include="Project\TypeScriptWebApp\server.ts" />
-  </ItemGroup>
-  <ItemGroup>
     <VSTemplate Include="Project\TypeScriptConsoleApp\NodejsConsoleApp.vstemplate">
       <OutputSubPath>Node.js</OutputSubPath>
     </VSTemplate>
@@ -210,8 +178,6 @@
       <OutputSubPath>Node.js</OutputSubPath>
     </VSTemplate>
     <None Include="Project\TypeScriptWebApp\Preview.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Project\TypeScriptAzureExpressApp\app.ts" />
     <None Include="Project\TypeScriptAzureExpressApp\routes\index.ts" />
     <None Include="Project\TypeScriptAzureExpressApp\routes\user.ts" />
@@ -219,8 +185,6 @@
     <None Include="Project\TypeScriptAzureNodejsWorker\startup.ts" />
     <None Include="Project\TypeScriptAzureWebApp\server.ts" />
     <None Include="Project\TypeScriptExpressApp\app.ts" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Project\TypeScriptAzureExpressApp\Preview.png" />
     <VSTemplate Include="Project\TypeScriptAzureExpressApp\TypeScriptAzureExpressApp.vstemplate">
       <OutputSubPath>Node.js</OutputSubPath>
@@ -240,66 +204,64 @@
     <VSTemplate Include="Project\TypeScriptFromExistingCode\FromExistingCode.vstemplate">
       <OutputSubPath>Node.js</OutputSubPath>
     </VSTemplate>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Project\TypeScriptAzureWebRole\Preview.png" />
     <VSTemplate Include="Project\TypeScriptAzureWebRole\TypeScriptAzureWebRole.vstemplate">
       <OutputSubPath>Node.js</OutputSubPath>
     </VSTemplate>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Project\TypeScriptAzureWebRole\server.ts" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Project\TypeScriptAzureExpressApp\public\stylesheets\main.css" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Project\TypeScriptExpressApp\public\stylesheets\main.css" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Project\TypeScriptExpressApp\routes\index.ts" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Project\TypeScriptExpressApp\routes\user.ts" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Item\EmptyCss\EmptyCss.css" />
     <VSTemplate Include="Item\EmptyCss\EmptyCss.vstemplate" />
     <None Include="Item\EmptyHtml\EmptyHtml.html" />
     <VSTemplate Include="Item\EmptyHtml\EmptyHtml.vstemplate" />
-    <Content Include="Item\EmptyJson\EmptyJson.vstemplate" />
+    <VSTemplate Include="Item\EmptyJson\EmptyJson.vstemplate" />
     <Content Include="Item\EmptyJsx\EmptyJsx.jsx" />
     <Content Include="Item\EmptyJsx\EmptyJsx.vstemplate" />
     <None Include="Item\EmptyJs\EmptyJs.js" />
     <VSTemplate Include="Item\EmptyJs\EmptyJs.vstemplate" />
-    <Content Include="Item\EmptyLess\EmptyLess.vstemplate" />
-    <Content Include="Item\EmptyPug\EmptyPug.vstemplate" />
-    <Content Include="Item\EmptyTs\EmptyTs.vstemplate" />
-    <Content Include="Item\EmptyXml\EmptyXml.vstemplate" />
-    <Content Include="Item\EmptyXml\EmptyXml.xml" />
-    <Content Include="Item\JasmineUnitTest\UnitTest.js" />
-    <Content Include="Item\JasmineUnitTest\UnitTest.vstemplate" />
-    <Content Include="Item\MochaUnitTest\UnitTest.js" />
-    <Content Include="Item\MochaUnitTest\UnitTest.vstemplate" />
-    <Content Include="Item\TapeUnitTest\UnitTest.js" />
-    <Content Include="Item\TapeUnitTest\UnitTest.vstemplate" />
-    <Content Include="Item\TypeScriptJasmineUnitTest\UnitTest.vstemplate" />
-    <Content Include="Item\TypeScriptJsConfig\jsconfig.vstemplate" />
-    <Content Include="Item\TypeScriptJSX\EmptyTsx.vstemplate" />
-    <Content Include="Item\TypeScriptMochaUnitTest\UnitTest.vstemplate" />
-    <Content Include="Item\TypeScriptTapeUnitTest\UnitTest.vstemplate" />
-    <Content Include="Item\TypeScriptTsConfig\tsconfig.vstemplate" />
-    <Content Include="Item\TypeScriptUnitTest\UnitTest.vstemplate" />
-    <Content Include="Item\UnitTest\UnitTest.js" />
-    <Content Include="Item\UnitTest\UnitTest.vstemplate" />
+    <VSTemplate Include="Item\EmptyLess\EmptyLess.vstemplate" />
+    <VSTemplate Include="Item\EmptyPug\EmptyPug.vstemplate" />
+    <VSTemplate Include="Item\EmptyTs\EmptyTs.vstemplate" />
+    <VSTemplate Include="Item\EmptyXml\EmptyXml.vstemplate" />
+    <None Include="Item\EmptyXml\EmptyXml.xml" />
+    <None Include="Item\JasmineUnitTest\UnitTest.js" />
+    <VSTemplate Include="Item\JasmineUnitTest\JasmineUnitTest.vstemplate" />
+    <None Include="Item\MochaUnitTest\UnitTest.js" />
+    <VSTemplate Include="Item\MochaUnitTest\MochaUnitTest.vstemplate" />
+    <None Include="Item\TapeUnitTest\UnitTest.js" />
+    <VSTemplate Include="Item\TapeUnitTest\TapeUnitTest.vstemplate" />
+    <VSTemplate Include="Item\TypeScriptJasmineUnitTest\TsJasmineUnitTest.vstemplate" />
+    <VSTemplate Include="Item\TypeScriptJsConfig\jsconfig.vstemplate" />
+    <VSTemplate Include="Item\TypeScriptJSX\EmptyTsx.vstemplate" />
+    <VSTemplate Include="Item\TypeScriptMochaUnitTest\TsMochaUnitTest.vstemplate" />
+    <VSTemplate Include="Item\TypeScriptTapeUnitTest\TsTapeUnitTest.vstemplate" />
+    <VSTemplate Include="Item\TypeScriptTsConfig\tsconfig.vstemplate" />
+    <VSTemplate Include="Item\TypeScriptUnitTest\TypeScriptUnitTest.vstemplate" />
+    <None Include="Item\UnitTest\UnitTest.js" />
+    <VSTemplate Include="Item\UnitTest\UnitTest.vstemplate" />
+    <None Include="Item\EmptyTs\EmptyTs.ts" />
+    <None Include="Item\TypeScriptJasmineUnitTest\UnitTest.ts" />
+    <None Include="Item\TypeScriptJSX\EmptyTsx.tsx" />
+    <None Include="Item\TypeScriptMochaUnitTest\UnitTest.ts" />
+    <None Include="Item\TypeScriptTapeUnitTest\UnitTest.ts" />
+    <None Include="Item\TypeScriptUnitTest\UnitTest.ts" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Item\EmptyTs\EmptyTs.ts" />
-    <TypeScriptCompile Include="Item\TypeScriptJasmineUnitTest\UnitTest.ts" />
-    <TypeScriptCompile Include="Item\TypeScriptJSX\EmptyTsx.tsx" />
-    <TypeScriptCompile Include="Item\TypeScriptMochaUnitTest\UnitTest.ts" />
-    <TypeScriptCompile Include="Item\TypeScriptTapeUnitTest\UnitTest.ts" />
-    <TypeScriptCompile Include="Item\TypeScriptUnitTest\UnitTest.ts" />
+    <Folder Include="Project\AzureExpress4App\node_modules\" />
+    <Folder Include="Project\AzureNodejsApp\node_modules\" />
+    <Folder Include="Project\AzureNodejsWorker\node_modules\" />
+    <Folder Include="Project\Express4App\node_modules\" />
+    <Folder Include="Project\NodejsWebApp\node_modules\" />
+    <Folder Include="Project\TypeScriptAzureExpressApp\node_modules\" />
+    <Folder Include="Project\TypeScriptAzureNodejsWorker\node_modules\" />
+    <Folder Include="Project\TypeScriptAzureWebApp\node_modules\" />
+    <Folder Include="Project\TypeScriptAzureWebRole\node_modules\" />
+    <Folder Include="Project\TypeScriptConsoleApp\node_modules\" />
+    <Folder Include="Project\TypeScriptExpressApp\node_modules\" />
+    <Folder Include="Project\TypeScriptWebApp\node_modules\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
