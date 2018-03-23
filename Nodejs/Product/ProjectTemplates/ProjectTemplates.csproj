@@ -53,215 +53,161 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="Project\AzureExpress4App\views\error.pug" />
-    <None Include="Project\AzureExpress4App\ExpressApp.njsproj" />
-    <None Include="Project\AzureExpress4App\views\index.pug" />
-    <None Include="Project\AzureExpress4App\views\layout.pug" />
-    <None Include="Project\AzureExpress4App\package.json" />
-    <None Include="Project\AzureExpress4App\README.md" />
-    <None Include="Project\AzureExpress4App\Web.config" />
-    <None Include="Project\AzureExpress4App\Web.Debug.config" />
-    <None Include="Project\AzureNodejsApp\AzureNodejsApp.njsproj" />
-    <None Include="Project\AzureNodejsApp\package.json" />
-    <None Include="Project\AzureNodejsApp\README.md" />
-    <None Include="Project\AzureNodejsApp\Web.config" />
-    <None Include="Project\AzureNodejsApp\Web.Debug.config" />
-    <None Include="Project\AzureNodejsWorker\package.json" />
-    <None Include="Project\AzureNodejsWorker\README.md" />
-    <None Include="Project\AzureNodejsWorker\Worker.njsproj" />
-    <None Include="Project\Express4App\ExpressApp.njsproj" />
-    <None Include="Project\Express4App\package.json" />
-    <None Include="Project\Express4App\README.md" />
-    <None Include="Project\Express4App\views\error.pug" />
-    <None Include="Project\Express4App\views\index.pug" />
-    <None Include="Project\Express4App\views\layout.pug" />
-    <None Include="Project\FromExistingCode\FromExistingCode.njsproj" />
-    <None Include="Item\EmptyJson\EmptyJson.json" />
-    <None Include="Item\EmptyLess\EmptyLess.less" />
-    <None Include="Item\EmptyPug\EmptyPug.pug" />
-    <None Include="Item\TypeScriptJsConfig\jsconfig.json" />
-    <None Include="Item\TypeScriptTsConfig\tsconfig.json" />
-    <None Include="Project\NodejsConsoleApp\NodejsConsoleApp.njsproj" />
-    <None Include="Project\NodejsConsoleApp\package.json" />
-    <None Include="Project\NodejsConsoleApp\README.md" />
-    <None Include="Project\NodejsWebApp\NodejsWebApp.njsproj" />
-    <None Include="Project\NodejsWebApp\package.json" />
-    <None Include="Project\NodejsWebApp\README.md" />
-    <None Include="Project\NodejsWebApp\Web.cloud.config" />
-    <None Include="Project\NodejsWebApp\Web.config" />
-    <None Include="Project\TypeScriptAzureExpressApp\package.json" />
-    <None Include="Project\TypeScriptAzureExpressApp\README.md" />
-    <None Include="Project\TypeScriptAzureExpressApp\tsconfig.json" />
-    <None Include="Project\TypeScriptAzureExpressApp\TypeScriptExpressApp.njsproj" />
-    <None Include="Project\TypeScriptAzureExpressApp\views\error.pug" />
-    <None Include="Project\TypeScriptAzureExpressApp\views\index.pug" />
-    <None Include="Project\TypeScriptAzureExpressApp\views\layout.pug" />
-    <None Include="Project\TypeScriptAzureExpressApp\Web.config" />
-    <None Include="Project\TypeScriptAzureExpressApp\Web.Debug.config" />
-    <None Include="Project\TypeScriptAzureNodejsWorker\package.json" />
-    <None Include="Project\TypeScriptAzureNodejsWorker\README.md" />
-    <None Include="Project\TypeScriptAzureNodejsWorker\Worker.njsproj" />
-    <None Include="Project\TypeScriptAzureWebApp\package.json" />
-    <None Include="Project\TypeScriptAzureWebApp\README.md" />
-    <None Include="Project\TypeScriptAzureWebApp\tsconfig.json" />
-    <None Include="Project\TypeScriptAzureWebApp\TypeScriptWebApp.njsproj" />
-    <None Include="Project\TypeScriptAzureWebApp\Web.config" />
-    <None Include="Project\TypeScriptAzureWebApp\Web.Debug.config" />
-    <None Include="Project\TypeScriptAzureWebRole\package.json" />
-    <None Include="Project\TypeScriptAzureWebRole\README.md" />
-    <None Include="Project\TypeScriptAzureWebRole\TypeScriptWebApp.njsproj" />
-    <None Include="Project\TypeScriptAzureWebRole\Web.config" />
-    <None Include="Project\TypeScriptAzureWebRole\Web.Debug.config" />
-    <None Include="Project\TypeScriptConsoleApp\NodejsConsoleApp.njsproj" />
-    <None Include="Project\TypeScriptConsoleApp\package.json" />
-    <None Include="Project\TypeScriptConsoleApp\README.md" />
-    <None Include="Project\TypeScriptConsoleApp\tsconfig.json" />
-    <None Include="Project\TypeScriptExpressApp\ExpressApp.njsproj" />
-    <None Include="Project\TypeScriptExpressApp\package.json" />
-    <None Include="Project\TypeScriptExpressApp\README.md" />
-    <None Include="Project\TypeScriptExpressApp\tsconfig.json" />
-    <None Include="Project\TypeScriptExpressApp\views\error.pug" />
-    <None Include="Project\TypeScriptExpressApp\views\index.pug" />
-    <None Include="Project\TypeScriptExpressApp\views\layout.pug" />
-    <None Include="Project\TypeScriptFromExistingCode\FromExistingCode.njsproj" />
-    <None Include="Project\TypeScriptWebApp\NodejsWebApp.njsproj" />
-    <None Include="Project\TypeScriptWebApp\package.json" />
-    <None Include="Project\TypeScriptWebApp\README.md" />
-    <None Include="Project\TypeScriptWebApp\tsconfig.json" />
-    <None Include="Project\NodejsConsoleApp\app.js" />
-    <VSTemplate Include="Project\NodejsConsoleApp\NodejsConsoleApp.vstemplate">
+    <None Include="AzureExpress4App\views\error.pug" />
+    <None Include="AzureExpress4App\ExpressApp.njsproj" />
+    <None Include="AzureExpress4App\views\index.pug" />
+    <None Include="AzureExpress4App\views\layout.pug" />
+    <None Include="AzureExpress4App\package.json" />
+    <None Include="AzureExpress4App\README.md" />
+    <None Include="AzureExpress4App\Web.config" />
+    <None Include="AzureExpress4App\Web.Debug.config" />
+    <None Include="AzureNodejsApp\AzureNodejsApp.njsproj" />
+    <None Include="AzureNodejsApp\package.json" />
+    <None Include="AzureNodejsApp\README.md" />
+    <None Include="AzureNodejsApp\Web.config" />
+    <None Include="AzureNodejsApp\Web.Debug.config" />
+    <None Include="AzureNodejsWorker\package.json" />
+    <None Include="AzureNodejsWorker\README.md" />
+    <None Include="AzureNodejsWorker\Worker.njsproj" />
+    <None Include="Express4App\ExpressApp.njsproj" />
+    <None Include="Express4App\package.json" />
+    <None Include="Express4App\README.md" />
+    <None Include="Express4App\views\error.pug" />
+    <None Include="Express4App\views\index.pug" />
+    <None Include="Express4App\views\layout.pug" />
+    <None Include="FromExistingCode\FromExistingCode.njsproj" />
+    <None Include="NodejsConsoleApp\NodejsConsoleApp.njsproj" />
+    <None Include="NodejsConsoleApp\package.json" />
+    <None Include="NodejsConsoleApp\README.md" />
+    <None Include="NodejsWebApp\NodejsWebApp.njsproj" />
+    <None Include="NodejsWebApp\package.json" />
+    <None Include="NodejsWebApp\README.md" />
+    <None Include="NodejsWebApp\Web.cloud.config" />
+    <None Include="NodejsWebApp\Web.config" />
+    <None Include="TypeScriptAzureExpressApp\package.json" />
+    <None Include="TypeScriptAzureExpressApp\README.md" />
+    <None Include="TypeScriptAzureExpressApp\tsconfig.json" />
+    <None Include="TypeScriptAzureExpressApp\TypeScriptExpressApp.njsproj" />
+    <None Include="TypeScriptAzureExpressApp\views\error.pug" />
+    <None Include="TypeScriptAzureExpressApp\views\index.pug" />
+    <None Include="TypeScriptAzureExpressApp\views\layout.pug" />
+    <None Include="TypeScriptAzureExpressApp\Web.config" />
+    <None Include="TypeScriptAzureExpressApp\Web.Debug.config" />
+    <None Include="TypeScriptAzureNodejsWorker\package.json" />
+    <None Include="TypeScriptAzureNodejsWorker\README.md" />
+    <None Include="TypeScriptAzureNodejsWorker\Worker.njsproj" />
+    <None Include="TypeScriptAzureWebApp\package.json" />
+    <None Include="TypeScriptAzureWebApp\README.md" />
+    <None Include="TypeScriptAzureWebApp\tsconfig.json" />
+    <None Include="TypeScriptAzureWebApp\TypeScriptWebApp.njsproj" />
+    <None Include="TypeScriptAzureWebApp\Web.config" />
+    <None Include="TypeScriptAzureWebApp\Web.Debug.config" />
+    <None Include="TypeScriptAzureWebRole\package.json" />
+    <None Include="TypeScriptAzureWebRole\README.md" />
+    <None Include="TypeScriptAzureWebRole\TypeScriptWebApp.njsproj" />
+    <None Include="TypeScriptAzureWebRole\Web.config" />
+    <None Include="TypeScriptAzureWebRole\Web.Debug.config" />
+    <None Include="TypeScriptConsoleApp\NodejsConsoleApp.njsproj" />
+    <None Include="TypeScriptConsoleApp\package.json" />
+    <None Include="TypeScriptConsoleApp\README.md" />
+    <None Include="TypeScriptConsoleApp\tsconfig.json" />
+    <None Include="TypeScriptExpressApp\ExpressApp.njsproj" />
+    <None Include="TypeScriptExpressApp\package.json" />
+    <None Include="TypeScriptExpressApp\README.md" />
+    <None Include="TypeScriptExpressApp\tsconfig.json" />
+    <None Include="TypeScriptExpressApp\views\error.pug" />
+    <None Include="TypeScriptExpressApp\views\index.pug" />
+    <None Include="TypeScriptExpressApp\views\layout.pug" />
+    <None Include="TypeScriptFromExistingCode\FromExistingCode.njsproj" />
+    <None Include="TypeScriptWebApp\NodejsWebApp.njsproj" />
+    <None Include="TypeScriptWebApp\package.json" />
+    <None Include="TypeScriptWebApp\README.md" />
+    <None Include="TypeScriptWebApp\tsconfig.json" />
+    <None Include="NodejsConsoleApp\app.js" />
+    <VSTemplate Include="NodejsConsoleApp\NodejsConsoleApp.vstemplate">
       <OutputSubPath>Node.js</OutputSubPath>
     </VSTemplate>
-    <None Include="Project\NodejsConsoleApp\Preview.png" />
-    <VSTemplate Include="Project\NodejsWebApp\NodejsWebApp.vstemplate">
+    <None Include="NodejsConsoleApp\Preview.png" />
+    <VSTemplate Include="NodejsWebApp\NodejsWebApp.vstemplate">
       <OutputSubPath>Node.js</OutputSubPath>
     </VSTemplate>
-    <None Include="Project\NodejsWebApp\Preview.png" />
-    <None Include="Project\NodejsWebApp\server.js" />
-    <None Include="Project\AzureExpress4App\app.js" />
-    <VSTemplate Include="Project\AzureExpress4App\AzureExpress4App.vstemplate">
+    <None Include="NodejsWebApp\Preview.png" />
+    <None Include="NodejsWebApp\server.js" />
+    <None Include="AzureExpress4App\app.js" />
+    <VSTemplate Include="AzureExpress4App\AzureExpress4App.vstemplate">
       <OutputSubPath>Node.js</OutputSubPath>
     </VSTemplate>
-    <None Include="Project\AzureExpress4App\routes\index.js" />
-    <None Include="Project\AzureExpress4App\public\stylesheets\main.css" />
-    <None Include="Project\AzureExpress4App\Preview.png" />
-    <None Include="Project\AzureExpress4App\routes\users.js" />
-    <VSTemplate Include="Project\AzureNodejsApp\AzureNodejsApp.vstemplate">
+    <None Include="AzureExpress4App\routes\index.js" />
+    <None Include="AzureExpress4App\public\stylesheets\main.css" />
+    <None Include="AzureExpress4App\Preview.png" />
+    <None Include="AzureExpress4App\routes\users.js" />
+    <VSTemplate Include="AzureNodejsApp\AzureNodejsApp.vstemplate">
       <OutputSubPath>Node.js</OutputSubPath>
     </VSTemplate>
-    <None Include="Project\AzureNodejsApp\Preview.png" />
-    <None Include="Project\AzureNodejsApp\server.js" />
-    <VSTemplate Include="Project\AzureNodejsWorker\AzureNodejsWorker.vstemplate">
+    <None Include="AzureNodejsApp\Preview.png" />
+    <None Include="AzureNodejsApp\server.js" />
+    <VSTemplate Include="AzureNodejsWorker\AzureNodejsWorker.vstemplate">
       <OutputSubPath>Node.js</OutputSubPath>
     </VSTemplate>
-    <None Include="Project\AzureNodejsWorker\Preview.png" />
-    <None Include="Project\AzureNodejsWorker\startup.js" />
-    <None Include="Project\AzureNodejsWorker\worker.js" />
-    <None Include="Project\Express4App\app.js" />
-    <VSTemplate Include="Project\Express4App\ExpressApp.vstemplate">
+    <None Include="AzureNodejsWorker\Preview.png" />
+    <None Include="AzureNodejsWorker\startup.js" />
+    <None Include="AzureNodejsWorker\worker.js" />
+    <None Include="Express4App\app.js" />
+    <VSTemplate Include="Express4App\ExpressApp.vstemplate">
       <OutputSubPath>Node.js</OutputSubPath>
     </VSTemplate>
-    <None Include="Project\Express4App\Preview.png" />
-    <VSTemplate Include="Project\FromExistingCode\FromExistingCode.vstemplate">
+    <None Include="Express4App\Preview.png" />
+    <VSTemplate Include="FromExistingCode\FromExistingCode.vstemplate">
       <OutputSubPath>Node.js</OutputSubPath>
     </VSTemplate>
-    <None Include="Project\Express4App\public\stylesheets\main.css" />
-    <None Include="Project\Express4App\routes\index.js" />
-    <None Include="Project\Express4App\routes\users.js" />
-    <None Include="Project\TypeScriptConsoleApp\app.ts" />
-    <None Include="Project\TypeScriptWebApp\server.ts" />
-    <VSTemplate Include="Project\TypeScriptConsoleApp\NodejsConsoleApp.vstemplate">
+    <None Include="Express4App\public\stylesheets\main.css" />
+    <None Include="Express4App\routes\index.js" />
+    <None Include="Express4App\routes\users.js" />
+    <None Include="TypeScriptConsoleApp\app.ts" />
+    <None Include="TypeScriptWebApp\server.ts" />
+    <VSTemplate Include="TypeScriptConsoleApp\NodejsConsoleApp.vstemplate">
       <OutputSubPath>Node.js</OutputSubPath>
     </VSTemplate>
-    <None Include="Project\TypeScriptConsoleApp\Preview.png" />
-    <VSTemplate Include="Project\TypeScriptWebApp\NodejsWebApp.vstemplate">
+    <None Include="TypeScriptConsoleApp\Preview.png" />
+    <VSTemplate Include="TypeScriptWebApp\NodejsWebApp.vstemplate">
       <OutputSubPath>Node.js</OutputSubPath>
     </VSTemplate>
-    <None Include="Project\TypeScriptWebApp\Preview.png" />
-    <None Include="Project\TypeScriptAzureExpressApp\app.ts" />
-    <None Include="Project\TypeScriptAzureExpressApp\routes\index.ts" />
-    <None Include="Project\TypeScriptAzureExpressApp\routes\user.ts" />
-    <None Include="Project\TypeScriptAzureNodejsWorker\server.ts" />
-    <None Include="Project\TypeScriptAzureNodejsWorker\startup.ts" />
-    <None Include="Project\TypeScriptAzureWebApp\server.ts" />
-    <None Include="Project\TypeScriptExpressApp\app.ts" />
-    <None Include="Project\TypeScriptAzureExpressApp\Preview.png" />
-    <VSTemplate Include="Project\TypeScriptAzureExpressApp\TypeScriptAzureExpressApp.vstemplate">
+    <None Include="TypeScriptWebApp\Preview.png" />
+    <None Include="TypeScriptAzureExpressApp\app.ts" />
+    <None Include="TypeScriptAzureExpressApp\routes\index.ts" />
+    <None Include="TypeScriptAzureExpressApp\routes\user.ts" />
+    <None Include="TypeScriptAzureNodejsWorker\server.ts" />
+    <None Include="TypeScriptAzureNodejsWorker\startup.ts" />
+    <None Include="TypeScriptAzureWebApp\server.ts" />
+    <None Include="TypeScriptExpressApp\app.ts" />
+    <None Include="TypeScriptAzureExpressApp\Preview.png" />
+    <VSTemplate Include="TypeScriptAzureExpressApp\TypeScriptAzureExpressApp.vstemplate">
       <OutputSubPath>Node.js</OutputSubPath>
     </VSTemplate>
-    <None Include="Project\TypeScriptAzureNodejsWorker\Preview.png" />
-    <VSTemplate Include="Project\TypeScriptAzureNodejsWorker\TypeScriptAzureNodejsWorker.vstemplate">
+    <None Include="TypeScriptAzureNodejsWorker\Preview.png" />
+    <VSTemplate Include="TypeScriptAzureNodejsWorker\TypeScriptAzureNodejsWorker.vstemplate">
       <OutputSubPath>Node.js</OutputSubPath>
     </VSTemplate>
-    <None Include="Project\TypeScriptAzureWebApp\Preview.png" />
-    <VSTemplate Include="Project\TypeScriptAzureWebApp\TypeScriptWebApp.vstemplate">
+    <None Include="TypeScriptAzureWebApp\Preview.png" />
+    <VSTemplate Include="TypeScriptAzureWebApp\TypeScriptWebApp.vstemplate">
       <OutputSubPath>Node.js</OutputSubPath>
     </VSTemplate>
-    <VSTemplate Include="Project\TypeScriptExpressApp\ExpressApp.vstemplate">
+    <VSTemplate Include="TypeScriptExpressApp\ExpressApp.vstemplate">
       <OutputSubPath>Node.js</OutputSubPath>
     </VSTemplate>
-    <None Include="Project\TypeScriptExpressApp\Preview.png" />
-    <VSTemplate Include="Project\TypeScriptFromExistingCode\FromExistingCode.vstemplate">
+    <None Include="TypeScriptExpressApp\Preview.png" />
+    <VSTemplate Include="TypeScriptFromExistingCode\FromExistingCode.vstemplate">
       <OutputSubPath>Node.js</OutputSubPath>
     </VSTemplate>
-    <None Include="Project\TypeScriptAzureWebRole\Preview.png" />
-    <VSTemplate Include="Project\TypeScriptAzureWebRole\TypeScriptAzureWebRole.vstemplate">
+    <None Include="TypeScriptAzureWebRole\Preview.png" />
+    <VSTemplate Include="TypeScriptAzureWebRole\TypeScriptAzureWebRole.vstemplate">
       <OutputSubPath>Node.js</OutputSubPath>
     </VSTemplate>
-    <None Include="Project\TypeScriptAzureWebRole\server.ts" />
-    <None Include="Project\TypeScriptAzureExpressApp\public\stylesheets\main.css" />
-    <None Include="Project\TypeScriptExpressApp\public\stylesheets\main.css" />
-    <None Include="Project\TypeScriptExpressApp\routes\index.ts" />
-    <None Include="Project\TypeScriptExpressApp\routes\user.ts" />
-    <None Include="Item\EmptyCss\EmptyCss.css" />
-    <VSTemplate Include="Item\EmptyCss\EmptyCss.vstemplate" />
-    <None Include="Item\EmptyHtml\EmptyHtml.html" />
-    <VSTemplate Include="Item\EmptyHtml\EmptyHtml.vstemplate" />
-    <VSTemplate Include="Item\EmptyJson\EmptyJson.vstemplate" />
-    <Content Include="Item\EmptyJsx\EmptyJsx.jsx" />
-    <Content Include="Item\EmptyJsx\EmptyJsx.vstemplate" />
-    <None Include="Item\EmptyJs\EmptyJs.js" />
-    <VSTemplate Include="Item\EmptyJs\EmptyJs.vstemplate" />
-    <VSTemplate Include="Item\EmptyLess\EmptyLess.vstemplate" />
-    <VSTemplate Include="Item\EmptyPug\EmptyPug.vstemplate" />
-    <VSTemplate Include="Item\EmptyTs\EmptyTs.vstemplate" />
-    <VSTemplate Include="Item\EmptyXml\EmptyXml.vstemplate" />
-    <None Include="Item\EmptyXml\EmptyXml.xml" />
-    <None Include="Item\JasmineUnitTest\UnitTest.js" />
-    <VSTemplate Include="Item\JasmineUnitTest\JasmineUnitTest.vstemplate" />
-    <None Include="Item\MochaUnitTest\UnitTest.js" />
-    <VSTemplate Include="Item\MochaUnitTest\MochaUnitTest.vstemplate" />
-    <None Include="Item\TapeUnitTest\UnitTest.js" />
-    <VSTemplate Include="Item\TapeUnitTest\TapeUnitTest.vstemplate" />
-    <VSTemplate Include="Item\TypeScriptJasmineUnitTest\TsJasmineUnitTest.vstemplate" />
-    <VSTemplate Include="Item\TypeScriptJsConfig\jsconfig.vstemplate" />
-    <VSTemplate Include="Item\TypeScriptJSX\EmptyTsx.vstemplate" />
-    <VSTemplate Include="Item\TypeScriptMochaUnitTest\TsMochaUnitTest.vstemplate" />
-    <VSTemplate Include="Item\TypeScriptTapeUnitTest\TsTapeUnitTest.vstemplate" />
-    <VSTemplate Include="Item\TypeScriptTsConfig\tsconfig.vstemplate" />
-    <VSTemplate Include="Item\TypeScriptUnitTest\TypeScriptUnitTest.vstemplate" />
-    <None Include="Item\UnitTest\UnitTest.js" />
-    <VSTemplate Include="Item\UnitTest\UnitTest.vstemplate" />
-    <None Include="Item\EmptyTs\EmptyTs.ts" />
-    <None Include="Item\TypeScriptJasmineUnitTest\UnitTest.ts" />
-    <None Include="Item\TypeScriptJSX\EmptyTsx.tsx" />
-    <None Include="Item\TypeScriptMochaUnitTest\UnitTest.ts" />
-    <None Include="Item\TypeScriptTapeUnitTest\UnitTest.ts" />
-    <None Include="Item\TypeScriptUnitTest\UnitTest.ts" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Project\AzureExpress4App\node_modules\" />
-    <Folder Include="Project\AzureNodejsApp\node_modules\" />
-    <Folder Include="Project\AzureNodejsWorker\node_modules\" />
-    <Folder Include="Project\Express4App\node_modules\" />
-    <Folder Include="Project\NodejsWebApp\node_modules\" />
-    <Folder Include="Project\TypeScriptAzureExpressApp\node_modules\" />
-    <Folder Include="Project\TypeScriptAzureNodejsWorker\node_modules\" />
-    <Folder Include="Project\TypeScriptAzureWebApp\node_modules\" />
-    <Folder Include="Project\TypeScriptAzureWebRole\node_modules\" />
-    <Folder Include="Project\TypeScriptConsoleApp\node_modules\" />
-    <Folder Include="Project\TypeScriptExpressApp\node_modules\" />
-    <Folder Include="Project\TypeScriptWebApp\node_modules\" />
+    <None Include="TypeScriptAzureWebRole\server.ts" />
+    <None Include="TypeScriptAzureExpressApp\public\stylesheets\main.css" />
+    <None Include="TypeScriptExpressApp\public\stylesheets\main.css" />
+    <None Include="TypeScriptExpressApp\routes\index.ts" />
+    <None Include="TypeScriptExpressApp\routes\user.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
