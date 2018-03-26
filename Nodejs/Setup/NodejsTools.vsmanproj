@@ -1,13 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\MicroBuild.Core.0.2.0\build\MicroBuild.Core.props" />
+  <Import Project=".\SetupProjectBefore.settings" />
   <PropertyGroup>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <ProjectGuid>{D9BADB3D-B6E9-4A54-8196-9374CFB93DA9}</ProjectGuid>
   </PropertyGroup>
-  <PropertyGroup Condition="$(Configuration) == 'Release' " />
-  <PropertyGroup Condition="$(Configuration) == 'Debug' " />
-  <Import Project="..\packages\MicroBuild.Core.0.2.0\build\MicroBuild.Core.props" />
-  <Import Project=".\SetupProjectBefore.settings" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release' ">
+    <IntermediateOutputPath>C:\Users\pvanbren\AppData\Local\Temp\vs142C.tmp\Release\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug' ">
+    <IntermediateOutputPath>C:\Users\pvanbren\AppData\Local\Temp\vs142C.tmp\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
   <PropertyGroup>
     <!-- Define properties that drive the manifest creation here. -->
     <FinalizeManifest>true</FinalizeManifest>
@@ -41,11 +45,9 @@
       <Name>TestAdapterVsix</Name>
     </ProjectReference>
   </ItemGroup>
-
   <Target Name="Build" />
   <Target Name="Clean" />
   <Target Name="ReBuild" />
-
   <Import Project="..\packages\MicroBuild.Core.0.2.0\build\MicroBuild.Core.targets" />
   <Import Project=".\SetupProjectAfter.settings" />
 </Project>
