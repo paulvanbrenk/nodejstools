@@ -1,17 +1,18 @@
-// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
+﻿// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
+using Microsoft.VisualStudio.PlatformUI;
 
 namespace Microsoft.VisualStudioTools.Project
 {
     /// <summary>
     /// Interaction logic for WaitForCompleteAnalysisDialog.xaml
     /// </summary>
-    internal partial class TaskProgressBar : DialogWindowVersioningWorkaround
+    internal partial class TaskProgressBar : DialogWindow
     {
         private readonly Task _task;
         private readonly DispatcherTimer _timer;

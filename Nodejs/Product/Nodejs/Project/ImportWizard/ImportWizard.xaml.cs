@@ -1,4 +1,4 @@
-// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
+﻿// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 using System;
 using System.Collections.ObjectModel;
@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
-using Microsoft.VisualStudioTools;
+using Microsoft.VisualStudio.PlatformUI;
 using WpfCommands = Microsoft.VisualStudioTools.Wpf.Commands;
 
 namespace Microsoft.NodejsTools.Project.ImportWizard
@@ -16,7 +16,7 @@ namespace Microsoft.NodejsTools.Project.ImportWizard
     /// <summary>
     /// Interaction logic for ImportWizard.xaml
     /// </summary>
-    internal partial class ImportWizard : DialogWindowVersioningWorkaround
+    internal partial class ImportWizard : DialogWindow
     {
         public static readonly RoutedCommand BrowseFolderCommand = new RoutedCommand();
         public static readonly RoutedCommand BrowseOpenFileCommand = new RoutedCommand();

@@ -1010,7 +1010,6 @@
     <Compile Include="SharedProject\CommonPackage.cs" />
     <Compile Include="SharedProject\DebugTimer.cs" />
     <Compile Include="SharedProject\DeveloperActivityAttribute.cs" />
-    <Compile Include="SharedProject\DialogWindowVersioningWorkaround.cs" />
     <Compile Include="SharedProject\Navigation\CommonLibraryNode.cs" />
     <Compile Include="SharedProject\Navigation\ProjectLibraryNode.cs" />
     <Compile Include="SharedProject\Navigation\HierarchyListener.cs" />

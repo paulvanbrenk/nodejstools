@@ -1,4 +1,4 @@
-﻿<ui:DialogWindowVersioningWorkaround
+﻿<ui:DialogWindow
     x:Class="Microsoft.NodejsTools.Project.ImportWizard.ImportWizard"
     x:ClassModifier="internal"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -6,7 +6,7 @@
     xmlns:l="clr-namespace:Microsoft.NodejsTools.Project.ImportWizard"
     xmlns:wpf="clr-namespace:Microsoft.VisualStudioTools.Wpf"
     xmlns:pt="clr-namespace:Microsoft.NodejsTools"
-    xmlns:ui="clr-namespace:Microsoft.VisualStudioTools"
+    xmlns:ui="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Shell.15.0"
     xmlns:resx="clr-namespace:Microsoft.NodejsTools"
     Height="525" Width="700"
     MinHeight="500" MinWidth="500"
@@ -83,4 +83,4 @@
             </Grid>
         </StackPanel>
     </Grid>
-</ui:DialogWindowVersioningWorkaround>
+</ui:DialogWindow>
