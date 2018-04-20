@@ -13,8 +13,8 @@ namespace Microsoft.VisualStudioTools.Project.Automation
             "$$Microsoft.VisualStudioTools.Project.Automation.WrappedStacktraceKey$$";
 
         #region fields
-        private OAProperties parent;
-        private PropertyInfo pi;
+        private readonly OAProperties parent;
+        private readonly PropertyInfo pi;
         #endregion
 
         #region ctors

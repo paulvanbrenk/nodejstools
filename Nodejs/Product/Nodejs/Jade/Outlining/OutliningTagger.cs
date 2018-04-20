@@ -10,8 +10,8 @@ namespace Microsoft.NodejsTools.Jade
     internal class OutliningTagger : ITagger<IOutliningRegionTag>
     {
         private OutlineRegionCollection _currentRegions;
-        private OutlineRegionBuilder _regionBuilder;
-        private ITextBuffer _textBuffer;
+        private readonly OutlineRegionBuilder _regionBuilder;
+        private readonly ITextBuffer _textBuffer;
 
         public OutliningTagger(ITextBuffer textBuffer, OutlineRegionBuilder regionBuilder)
         {

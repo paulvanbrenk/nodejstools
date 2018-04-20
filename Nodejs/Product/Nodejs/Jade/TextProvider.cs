@@ -15,8 +15,8 @@ namespace Microsoft.NodejsTools.Jade
 
         private string _cachedBlock;
         private int _basePosition;
-        private ITextSnapshot _snapshot;
-        private bool _partial = false;
+        private readonly ITextSnapshot _snapshot;
+        private readonly bool _partial = false;
 
         public TextProvider(ITextSnapshot snapshot, bool partial = false)
         {

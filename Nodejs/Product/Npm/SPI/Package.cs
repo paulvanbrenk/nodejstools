@@ -10,7 +10,7 @@ namespace Microsoft.NodejsTools.Npm.SPI
 {
     internal class Package : RootPackage, IPackage
     {
-        private IRootPackage parent;
+        private readonly IRootPackage parent;
 
         public Package(
             IRootPackage parent,

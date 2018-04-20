@@ -28,7 +28,7 @@ namespace Microsoft.NodejsTools.Debugger
             this._waitOnAbnormal = waitOnAbnormal;
             this._waitOnNormal = waitOnNormal;
             this._enableRaisingEvents = enableRaisingEvents;
-            DebuggerPort = debuggerPort;
+            this.DebuggerPort = debuggerPort;
         }
 
         public static NodeProcess Start(ProcessStartInfo psi, bool waitOnAbnormal, bool waitOnNormal)

@@ -20,7 +20,7 @@ namespace Microsoft.NodejsTools.Jade
     {
         private static readonly IList<T> _emptyList = Array.Empty<T>();
 
-        private List<T> _items = new List<T>();
+        private readonly List<T> _items = new List<T>();
 
         #region Construction
         public TextRangeCollection()

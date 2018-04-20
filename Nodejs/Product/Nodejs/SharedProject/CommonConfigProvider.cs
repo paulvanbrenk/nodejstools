@@ -15,8 +15,8 @@ namespace Microsoft.VisualStudioTools.Project
     /// </summary>
     internal class CommonConfigProvider : ConfigProvider
     {
-        private CommonProjectNode _project;
-        private bool _isPlatformAware;
+        private readonly CommonProjectNode _project;
+        private readonly bool _isPlatformAware;
 
         public CommonConfigProvider(CommonProjectNode project)
             : base(project)

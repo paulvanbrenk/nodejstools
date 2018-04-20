@@ -14,8 +14,8 @@ namespace Microsoft.VisualStudioTools.Project.Automation
     [ComVisible(true)]
     public class OAProperties : EnvDTE.Properties
     {
-        private NodeProperties target;
-        private Dictionary<string, EnvDTE.Property> properties = new Dictionary<string, EnvDTE.Property>();
+        private readonly NodeProperties target;
+        private readonly Dictionary<string, EnvDTE.Property> properties = new Dictionary<string, EnvDTE.Property>();
 
         public OAProperties(NodeProperties target)
         {

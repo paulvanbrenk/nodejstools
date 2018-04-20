@@ -14,7 +14,7 @@ namespace Microsoft.VisualStudioTools.Project.Automation
     public class OAVSProject : VSProject
     {
         #region fields
-        private ProjectNode project;
+        private readonly ProjectNode project;
         private OAVSProjectEvents events;
         #endregion
 
@@ -121,7 +121,7 @@ namespace Microsoft.VisualStudioTools.Project.Automation
     public class OAVSProjectEvents : VSProjectEvents
     {
         #region fields
-        private OAVSProject vsProject;
+        private readonly OAVSProject vsProject;
         #endregion
 
         #region ctors

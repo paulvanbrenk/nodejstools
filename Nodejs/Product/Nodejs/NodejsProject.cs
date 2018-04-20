@@ -29,7 +29,7 @@ namespace Microsoft.NodejsTools
         internal IVsProject3 _innerProject3;
         internal NodejsPackage _package;
         private OleMenuCommandService _menuService;
-        private List<OleMenuCommand> _commands = new List<OleMenuCommand>();
+        private readonly List<OleMenuCommand> _commands = new List<OleMenuCommand>();
         private IVsProjectFlavorCfgProvider _innerVsProjectFlavorCfgProvider;
 
         protected override void Close()

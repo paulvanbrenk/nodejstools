@@ -8,10 +8,10 @@ namespace Microsoft.NodejsTools.Debugger.DebugEngine
     // This class manages breakpoints for the engine. 
     internal class BreakpointManager
     {
-        private AD7Engine m_engine;
-        private System.Collections.Generic.List<AD7PendingBreakpoint> m_pendingBreakpoints;
-        private Dictionary<NodeBreakpoint, AD7PendingBreakpoint> _breakpointMap = new Dictionary<NodeBreakpoint, AD7PendingBreakpoint>();
-        private Dictionary<NodeBreakpointBinding, AD7BoundBreakpoint> _breakpointBindingMap = new Dictionary<NodeBreakpointBinding, AD7BoundBreakpoint>();
+        private readonly AD7Engine m_engine;
+        private readonly System.Collections.Generic.List<AD7PendingBreakpoint> m_pendingBreakpoints;
+        private readonly Dictionary<NodeBreakpoint, AD7PendingBreakpoint> _breakpointMap = new Dictionary<NodeBreakpoint, AD7PendingBreakpoint>();
+        private readonly Dictionary<NodeBreakpointBinding, AD7BoundBreakpoint> _breakpointBindingMap = new Dictionary<NodeBreakpointBinding, AD7BoundBreakpoint>();
 
         public BreakpointManager(AD7Engine engine)
         {

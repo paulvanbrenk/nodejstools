@@ -13,7 +13,7 @@ namespace Microsoft.VisualStudioTools.Project.Automation
     /// </summary>
     internal sealed class AutomationScope : IDisposable
     {
-        private IVsExtensibility3 extensibility;
+        private readonly IVsExtensibility3 extensibility;
         private bool inAutomation;
         private bool isDisposed;
 

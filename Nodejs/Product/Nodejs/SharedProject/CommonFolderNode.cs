@@ -14,7 +14,7 @@ namespace Microsoft.VisualStudioTools.Project
 {
     internal class CommonFolderNode : FolderNode
     {
-        private CommonProjectNode _project;
+        private readonly CommonProjectNode _project;
 
         public CommonFolderNode(CommonProjectNode root, ProjectElement element)
             : base(root, element)

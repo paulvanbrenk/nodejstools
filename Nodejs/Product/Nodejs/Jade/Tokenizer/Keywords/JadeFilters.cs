@@ -13,7 +13,7 @@ namespace Microsoft.NodejsTools.Jade
         }
 
         // must be sorted
-        private static string[] _filters = new string[] {
+        private static readonly string[] _filters = new string[] {
             "cdata",
             "coffeescript",
             "less",

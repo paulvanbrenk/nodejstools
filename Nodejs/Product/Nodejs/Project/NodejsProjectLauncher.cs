@@ -105,7 +105,7 @@ namespace Microsoft.NodejsTools.Project
 
                 FileName = nodePath,
                 Arguments = GetFullArguments(file, includeNodeArgs: true),
-                WorkingDirectory = _project.GetWorkingDirectory()
+                WorkingDirectory = this._project.GetWorkingDirectory()
             };
 
             var webBrowserUrl = GetFullUrl();
@@ -234,7 +234,7 @@ namespace Microsoft.NodejsTools.Project
 
         private void StartWithChromeV2Debugger(string file, string nodePath, bool startBrowser)
         {
-            var serviceProvider = _project.Site;
+            var serviceProvider = this._project.Site;
 
             // Here we need to massage the env variables into the format expected by node and vs code
             var webBrowserUrl = GetFullUrl();
@@ -250,7 +250,7 @@ namespace Microsoft.NodejsTools.Project
             runtimeArguments = runtimeArguments.Append($"--inspect-brk={debuggerPort}");
             var scriptArguments = ConvertArguments(this._project.GetProjectProperty(NodeProjectProperty.ScriptArguments));
 
-            var cwd = _project.GetWorkingDirectory(); // Current working directory
+            var cwd = this._project.GetWorkingDirectory(); // Current working directory
             var configuration = new JObject(
                 new JProperty("name", "Debug Node.js program from Visual Studio"),
                 new JProperty("type", "node2"),

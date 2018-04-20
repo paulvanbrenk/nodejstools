@@ -22,7 +22,7 @@ namespace Microsoft.VisualStudioTools
 
         public WebSocketProxyBase()
         {
-            _id = Interlocked.Increment(ref _lastId);
+            this._id = Interlocked.Increment(ref _lastId);
         }
 
         public abstract int DebuggerPort { get; }
@@ -40,7 +40,7 @@ namespace Microsoft.VisualStudioTools
         {
             if (context.IsWebSocketRequest)
             {
-                context.AcceptWebSocketRequest(WebSocketRequestHandler);
+                context.AcceptWebSocketRequest(this.WebSocketRequestHandler);
             }
             else
             {
@@ -97,7 +97,7 @@ namespace Microsoft.VisualStudioTools
             Log("Accepted web socket request from {0}.", context.UserHostAddress);
 
             TaskCompletionSource<bool> tcs = null;
-            if (!AllowConcurrentConnections)
+            if (!this.AllowConcurrentConnections)
             {
                 tcs = new TaskCompletionSource<bool>();
                 while (true)
@@ -116,7 +116,7 @@ namespace Microsoft.VisualStudioTools
             try
             {
                 var webSocket = context.WebSocket;
-                using (var tcpClient = new TcpClient("localhost", DebuggerPort))
+                using (var tcpClient = new TcpClient("localhost", this.DebuggerPort))
                 {
                     try
                     {
@@ -238,7 +238,7 @@ namespace Microsoft.VisualStudioTools
             var log = _log;
             if (log != null)
             {
-                log.WriteLine(_id + " :: " + o);
+                log.WriteLine(this._id + " :: " + o);
             }
         }
 
@@ -247,7 +247,7 @@ namespace Microsoft.VisualStudioTools
             var log = _log;
             if (log != null)
             {
-                log.WriteLine(_id + " :: " + format, arg1);
+                log.WriteLine(this._id + " :: " + format, arg1);
             }
         }
     }

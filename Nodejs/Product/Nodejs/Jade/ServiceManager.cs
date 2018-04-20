@@ -11,11 +11,11 @@ namespace Microsoft.NodejsTools.Jade
     {
         private const string ServiceManagerId = "ServiceManager";
         private IPropertyOwner _propertyOwner;
-        private object _lock = new object();
+        private readonly object _lock = new object();
 
-        private Dictionary<Type, object> _servicesByType = new Dictionary<Type, object>();
-        private Dictionary<Guid, object> _servicesByGuid = new Dictionary<Guid, object>();
-        private Dictionary<(Type, string), object> _servicesByContentType = new Dictionary<(Type, string), object>();
+        private readonly Dictionary<Type, object> _servicesByType = new Dictionary<Type, object>();
+        private readonly Dictionary<Guid, object> _servicesByGuid = new Dictionary<Guid, object>();
+        private readonly Dictionary<(Type, string), object> _servicesByContentType = new Dictionary<(Type, string), object>();
 
         private ServiceManager(IPropertyOwner propertyOwner)
         {

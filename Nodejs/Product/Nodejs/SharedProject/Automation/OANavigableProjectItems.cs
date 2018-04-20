@@ -13,8 +13,8 @@ namespace Microsoft.VisualStudioTools.Project.Automation
     public class OANavigableProjectItems : EnvDTE.ProjectItems
     {
         #region fields
-        private OAProject project;
-        private HierarchyNode nodeWithItems;
+        private readonly OAProject project;
+        private readonly HierarchyNode nodeWithItems;
         #endregion
 
         #region properties

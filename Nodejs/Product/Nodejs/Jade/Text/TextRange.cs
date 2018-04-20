@@ -15,7 +15,7 @@ namespace Microsoft.NodejsTools.Jade
     [DebuggerDisplay("[{Start}...{End}], Length = {Length}")]
     internal class TextRange : IExpandableTextRange, ICloneable, IComparable
     {
-        private static TextRange _emptyRange = new TextRange(0, 0);
+        private static readonly TextRange _emptyRange = new TextRange(0, 0);
 
         private int _start;
         private int _end;

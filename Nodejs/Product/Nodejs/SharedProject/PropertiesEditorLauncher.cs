@@ -15,7 +15,7 @@ namespace Microsoft.VisualStudioTools.Project
 
     public class PropertiesEditorLauncher : ComponentEditor
     {
-        private ServiceProvider serviceProvider;
+        private readonly ServiceProvider serviceProvider;
 
         #region ctor
         public PropertiesEditorLauncher(ServiceProvider serviceProvider)

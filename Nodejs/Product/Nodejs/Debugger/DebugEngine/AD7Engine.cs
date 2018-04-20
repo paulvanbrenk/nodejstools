@@ -111,16 +111,16 @@ namespace Microsoft.NodejsTools.Debugger.DebugEngine
         ~AD7Engine()
         {
             LiveLogger.WriteLine("AD7Engine Finalized ({0})", GetHashCode());
-            if (!_attached && _process != null)
+            if (!this._attached && this._process != null)
             {
                 // detach the process exited event, we don't need to send the exited event
                 // which could happen when we terminate the process and check if it's still
                 // running.
-                _process.ProcessExited -= OnProcessExited;
+                this._process.ProcessExited -= this.OnProcessExited;
 
                 // we launched the process, go ahead and kill it now that
                 // VS has released us
-                _process.Terminate();
+                this._process.Terminate();
             }
 
             foreach (var engine in Engines)
@@ -601,7 +601,7 @@ namespace Microsoft.NodejsTools.Debugger.DebugEngine
             var adProcessId = new AD_PROCESS_ID()
             {
                 ProcessIdType = (uint)enum_AD_PROCESS_ID.AD_PROCESS_ID_SYSTEM,
-                dwProcessId = (uint)_process.Id
+                dwProcessId = (uint)this._process.Id
             };
 
             EngineUtils.RequireOk(port.GetProcess(adProcessId, out process));

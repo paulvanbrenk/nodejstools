@@ -12,8 +12,8 @@ namespace Microsoft.VisualStudioTools.Project
     {
         #region fields
         private uint eventsCookie;
-        private IVsSolution solution;
-        private IServiceProvider serviceProvider;
+        private readonly IVsSolution solution;
+        private readonly IServiceProvider serviceProvider;
         private bool isDisposed;
         /// <summary>
         /// Defines an object that will be a mutex for this object for synchronizing thread calls.

@@ -12,8 +12,8 @@ namespace Microsoft.NodejsTools.Jade
     internal class CharacterStream
     {
         private char _currentChar;
-        private ITextProvider _text;
-        private TextRange _range;
+        private readonly ITextProvider _text;
+        private readonly TextRange _range;
         private int _position = 0;
         private bool _isEndOfStream = false;
 

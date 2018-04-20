@@ -28,7 +28,7 @@ namespace Microsoft.VisualStudioTools.Navigation
 
         internal void AddNode(LibraryNode node)
         {
-            lock (syncLock)
+            lock (this.syncLock)
             {
                 // re-create root node here because we may have handed out the node before and don't want to mutate it's list.
                 this.root = this.root.Clone();
@@ -39,7 +39,7 @@ namespace Microsoft.VisualStudioTools.Navigation
 
         internal void RemoveNode(LibraryNode node)
         {
-            lock (syncLock)
+            lock (this.syncLock)
             {
                 this.root = this.root.Clone();
                 this.root.RemoveNode(node);
@@ -170,7 +170,7 @@ namespace Microsoft.VisualStudioTools.Navigation
 
         public void VisitNodes(ILibraryNodeVisitor visitor, CancellationToken ct = default(CancellationToken))
         {
-            lock (syncLock)
+            lock (this.syncLock)
             {
                 this.root.Visit(visitor, ct);
             }

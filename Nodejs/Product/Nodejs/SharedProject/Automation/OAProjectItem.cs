@@ -12,8 +12,8 @@ namespace Microsoft.VisualStudioTools.Project.Automation
     public class OAProjectItem : EnvDTE.ProjectItem
     {
         #region fields
-        private HierarchyNode node;
-        private OAProject project;
+        private readonly HierarchyNode node;
+        private readonly OAProject project;
         #endregion
 
         #region properties

@@ -13,7 +13,7 @@ namespace Microsoft.NodejsTools.Jade
         }
 
         // must be sorted
-        private static string[] _keywords = new string[]
+        private static readonly string[] _keywords = new string[]
         {
             "each",
             "else",

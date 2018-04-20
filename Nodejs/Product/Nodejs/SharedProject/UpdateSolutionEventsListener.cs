@@ -28,12 +28,12 @@ namespace Microsoft.VisualStudioTools.Project
         /// <summary>
         /// The IVsSolutionBuildManager2 object controlling the update solution events.
         /// </summary>
-        private IVsSolutionBuildManager2 solutionBuildManager;
+        private readonly IVsSolutionBuildManager2 solutionBuildManager;
 
         /// <summary>
         /// The associated service provider.
         /// </summary>
-        private IServiceProvider serviceProvider;
+        private readonly IServiceProvider serviceProvider;
 
         /// <summary>
         /// Flag determining if the object has been disposed.

@@ -14,7 +14,7 @@ namespace Microsoft.VisualStudioTools
     internal class WebSocketStream : Stream
     {
         private readonly WebSocket _webSocket;
-        private bool _ownsSocket;
+        private readonly bool _ownsSocket;
 
         public WebSocketStream(WebSocket webSocket, bool ownsSocket = false)
         {

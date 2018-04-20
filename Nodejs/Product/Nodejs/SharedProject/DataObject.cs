@@ -109,8 +109,8 @@ namespace Microsoft.VisualStudioTools.Project
     {
         #region fields
         internal const int DATA_S_SAMEFORMATETC = 0x00040130;
-        private EventSinkCollection map;
-        private ArrayList entries;
+        private readonly EventSinkCollection map;
+        private readonly ArrayList entries;
         #endregion
 
         internal DataObject()
@@ -429,9 +429,9 @@ namespace Microsoft.VisualStudioTools.Project
 
     internal class EnumSTATDATA : IEnumSTATDATA
     {
-        private IEnumerable i;
+        private readonly IEnumerable i;
 
-        private IEnumerator e;
+        private readonly IEnumerator e;
 
         public EnumSTATDATA(IEnumerable i)
         {
@@ -485,11 +485,11 @@ namespace Microsoft.VisualStudioTools.Project
 
     internal class EnumFORMATETC : IEnumFORMATETC
     {
-        private IEnumerable cache; // of DataCacheEntrys.
+        private readonly IEnumerable cache; // of DataCacheEntrys.
 
-        private DATADIR dir;
+        private readonly DATADIR dir;
 
-        private IEnumerator e;
+        private readonly IEnumerator e;
 
         public EnumFORMATETC(DATADIR dir, IEnumerable cache)
         {

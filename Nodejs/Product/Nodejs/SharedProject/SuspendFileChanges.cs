@@ -15,11 +15,11 @@ namespace Microsoft.VisualStudioTools.Project
     /// </summary>
     internal class SuspendFileChanges
     {
-        private string documentFileName;
+        private readonly string documentFileName;
 
         private bool isSuspending;
 
-        private IServiceProvider site;
+        private readonly IServiceProvider site;
 
         private IVsDocDataFileChangeControl fileChangeControl;
 

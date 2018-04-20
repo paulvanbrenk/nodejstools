@@ -15,7 +15,7 @@ namespace Microsoft.NodejsTools.Jade
         protected ITextBuffer TextBuffer { get; set; }
 
         private long _disposed = 0;
-        private object _regionsLock = new object();
+        private readonly object _regionsLock = new object();
 
         protected OutlineRegionBuilder(ITextBuffer textBuffer)
         {

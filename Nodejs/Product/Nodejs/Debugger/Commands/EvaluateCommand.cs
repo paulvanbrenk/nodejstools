@@ -21,8 +21,8 @@ namespace Microsoft.NodejsTools.Debugger.Commands
             this._stackFrame = stackFrame;
 
             this._arguments = new Dictionary<string, object> {
-                { "expression", _expression },
-                { "frame", _stackFrame != null ? _stackFrame.FrameId : 0 },
+                { "expression", this._expression },
+                { "frame", this._stackFrame != null ? this._stackFrame.FrameId : 0 },
                 { "global", false },
                 { "disable_break", true },
                 { "maxStringLength", -1 }
@@ -37,11 +37,11 @@ namespace Microsoft.NodejsTools.Debugger.Commands
             this._stackFrame = stackFrame;
 
             this._arguments = new Dictionary<string, object> {
-                { "expression", _expression + ".toString()" },
-                { "frame", _stackFrame != null ? _stackFrame.FrameId : 0 },
+                { "expression", this._expression + ".toString()" },
+                { "frame", this._stackFrame != null ? this._stackFrame.FrameId : 0 },
                 { "global", false },
                 { "disable_break", true },
-                { "additional_context", new[] { new { name = _expression, handle = variableId } } },
+                { "additional_context", new[] { new { name = this._expression, handle = variableId } } },
                 { "maxStringLength", -1 }
             };
         }

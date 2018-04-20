@@ -21,17 +21,17 @@ namespace Microsoft.NodejsTools.ProjectWizard
         public void ProjectItemFinishedGenerating(ProjectItem projectItem)
         {
             EnvDTE.Property property = projectItem.Properties.Item("TestFramework");
-            property.Value = _framework;
+            property.Value = this._framework;
         }
 
         public void RunFinished() { }
 
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
-            if (!replacementsDictionary.TryGetValue("TestFramework", out _framework) ||
-                string.IsNullOrWhiteSpace(_framework))
+            if (!replacementsDictionary.TryGetValue("TestFramework", out this._framework) ||
+                string.IsNullOrWhiteSpace(this._framework))
             {
-                _framework = TestFrameworkDirectories.ExportRunnerFrameworkName;
+                this._framework = TestFrameworkDirectories.ExportRunnerFrameworkName;
             }
         }
 

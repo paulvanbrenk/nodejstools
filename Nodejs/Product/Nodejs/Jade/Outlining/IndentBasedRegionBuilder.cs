@@ -1,6 +1,5 @@
-// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
+﻿// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
-using System;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.Text;
 
@@ -20,7 +19,7 @@ namespace Microsoft.NodejsTools.Jade
             }
         }
 
-        private static int _minLinesToOutline = 2;
+        private const int MinLinesToOutline = 2;
 
         public IndentBasedOutlineRegionBuilder(ITextBuffer textBuffer)
             : base(textBuffer)
@@ -100,7 +99,7 @@ namespace Microsoft.NodejsTools.Jade
 
                         j++;
 
-                        if (j > 0 && j - startLine >= _minLinesToOutline)
+                        if (j > 0 && j - startLine >= MinLinesToOutline)
                         {
                             var prevLine = snapshot.GetLineFromLineNumber(j - 1);
 
@@ -148,7 +147,7 @@ namespace Microsoft.NodejsTools.Jade
                 var codeBlock = regionStack.Pop();
 
                 var startLine = snapshot.GetLineNumberFromPosition(codeBlock.Start);
-                if (snapshot.LineCount - startLine >= _minLinesToOutline)
+                if (snapshot.LineCount - startLine >= MinLinesToOutline)
                 {
                     newRegions.Add(OutlineRegion.FromBounds(snapshot.TextBuffer, codeBlock.Start, snapshot.Length));
                 }

@@ -151,7 +151,7 @@ namespace Microsoft.NodejsTools.NpmUI
             {
                 this.isFiltering = value;
                 OnPropertyChanged();
-                OnPropertyChanged(nameof(PackageFilterState));
+                OnPropertyChanged(nameof(this.PackageFilterState));
             }
         }
 
@@ -174,7 +174,7 @@ namespace Microsoft.NodejsTools.NpmUI
                 // PackageFilterState should be triggered before FilteredPackages
                 // to allow the UI to update the status before the package list,
                 // making for a smoother experience.
-                OnPropertyChanged(nameof(PackageFilterState));
+                OnPropertyChanged(nameof(this.PackageFilterState));
                 OnPropertyChanged();
             }
         }
@@ -190,7 +190,7 @@ namespace Microsoft.NodejsTools.NpmUI
                 this.IsFiltering = !string.IsNullOrWhiteSpace(this.filterText);
 
                 OnPropertyChanged();
-                OnPropertyChanged(nameof(PackageFilterState));
+                OnPropertyChanged(nameof(this.PackageFilterState));
             }
         }
 
@@ -378,14 +378,14 @@ namespace Microsoft.NodejsTools.NpmUI
                     this.isExecutingCommand = value;
 
                     OnPropertyChanged();
-                    OnPropertyChanged(nameof(ExecutionProgressVisibility));
+                    OnPropertyChanged(nameof(this.ExecutionProgressVisibility));
                 }
             }
         }
 
         public Visibility ExecutionProgressVisibility
         {
-            get { return IsExecutingCommand ? Visibility.Visible : Visibility.Collapsed; }
+            get { return this.IsExecutingCommand ? Visibility.Visible : Visibility.Collapsed; }
         }
 
         #endregion
@@ -399,7 +399,7 @@ namespace Microsoft.NodejsTools.NpmUI
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!disposed)
+            if (!this.disposed)
             {
                 if (disposing)
                 {
@@ -417,7 +417,7 @@ namespace Microsoft.NodejsTools.NpmUI
                         worker.CommandCompleted -= this.NpmWorker_CommandCompleted;
                     }
                 }
-                disposed = true;
+                this.disposed = true;
             }
         }
 

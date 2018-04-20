@@ -33,7 +33,7 @@ namespace Microsoft.VisualStudioTools.Project
         #endregion
 
         #region Properties
-        private static string[] supportedReferenceTypes = new string[] {
+        private static readonly string[] supportedReferenceTypes = new string[] {
             ProjectFileConstants.ProjectReference,
             ProjectFileConstants.Reference,
             ProjectFileConstants.COMReference,

@@ -24,7 +24,7 @@ namespace Microsoft.VisualStudioTools.Project
     internal class CommonFileNode : FileNode
     {
         private OAVSProjectItem _vsProjectItem;
-        private CommonProjectNode _project;
+        private readonly CommonProjectNode _project;
 
         public CommonFileNode(CommonProjectNode root, ProjectElement e)
             : base(root, e)

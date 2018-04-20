@@ -10,7 +10,7 @@ namespace Microsoft.NodejsTools.Jade
     /// </summary>
     internal class OutlineRegion : TextRange
     {
-        private ITextBuffer _textBuffer;
+        private readonly ITextBuffer _textBuffer;
         private const string _outlineDisplayText = "...";
 
         public OutlineRegion(ITextBuffer textBuffer, ITextRange range)

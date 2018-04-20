@@ -60,7 +60,7 @@ namespace Microsoft.NodejsTools.TestAdapter
 
         private static readonly char[] needToBeQuoted = new[] { ' ', '"' };
         private ProcessOutput nodeProcess;
-        private object syncObject = new object();
+        private readonly object syncObject = new object();
         private List<TestCase> currentTests;
         private IFrameworkHandle frameworkHandle;
         private TestResult currentResult = null;

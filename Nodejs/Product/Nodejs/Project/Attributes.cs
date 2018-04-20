@@ -8,7 +8,7 @@ namespace Microsoft.NodejsTools.Project
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Property | AttributeTargets.Field, Inherited = false, AllowMultiple = false)]
     internal sealed class SRDisplayNameAttribute : DisplayNameAttribute
     {
-        private string _name;
+        private readonly string _name;
 
         public SRDisplayNameAttribute(string name)
         {
@@ -21,7 +21,7 @@ namespace Microsoft.NodejsTools.Project
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Property | AttributeTargets.Field, Inherited = false, AllowMultiple = false)]
     internal sealed class ResourcesDisplayNameAttribute : DisplayNameAttribute
     {
-        private string _name;
+        private readonly string _name;
 
         public ResourcesDisplayNameAttribute(string name)
         {

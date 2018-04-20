@@ -117,7 +117,7 @@ namespace Microsoft.NodejsTools.Project
 
         private class NpmPathProvider : INpmPathProvider
         {
-            private NodeModulesNode _owner;
+            private readonly NodeModulesNode _owner;
             internal NpmPathProvider(NodeModulesNode owner)
             {
                 this._owner = owner;

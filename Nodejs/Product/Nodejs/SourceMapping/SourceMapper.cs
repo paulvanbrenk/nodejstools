@@ -287,7 +287,7 @@ namespace Microsoft.NodejsTools.SourceMapping
             return sourceMap;
         }
 
-        private static char[] InvalidPathChars = Path.GetInvalidPathChars();
+        private static readonly char[] InvalidPathChars = Path.GetInvalidPathChars();
 
         public static FunctionInformation MaybeMap(FunctionInformation funcInfo, Dictionary<string, SourceMap> sourceMaps = null)
         {

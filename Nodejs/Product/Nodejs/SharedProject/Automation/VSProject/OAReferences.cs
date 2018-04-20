@@ -20,7 +20,7 @@ namespace Microsoft.VisualStudioTools.Project.Automation
                                 ReferencesEvents
     {
         private readonly ProjectNode _project;
-        private ReferenceContainerNode _container;
+        private readonly ReferenceContainerNode _container;
 
         /// <summary>
         /// Creates a new automation references object.  If the project type doesn't

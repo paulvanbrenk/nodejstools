@@ -22,8 +22,8 @@ namespace Microsoft.NodejsTools
     internal sealed class ProvideEditorExtension2Attribute : RegistrationAttribute
     {
         private Guid _factory;
-        private string _extension;
-        private int _priority;
+        private readonly string _extension;
+        private readonly int _priority;
         private Guid _project;
         private string _templateDir;
         private int _resId;
@@ -32,7 +32,7 @@ namespace Microsoft.NodejsTools
         private string _editorName;
         private Guid _linkedEditorGuid;
         private readonly string[] _extensions;
-        private __VSPHYSICALVIEWATTRIBUTES _commonViewAttrs;
+        private readonly __VSPHYSICALVIEWATTRIBUTES _commonViewAttrs;
 
         /// <include file='doc\ProvideEditorExtensionAttribute.uex' path='docs/doc[@for="ProvideEditorExtensionAttribute.ProvideEditorExtensionAttribute"]' />
         /// <devdoc>

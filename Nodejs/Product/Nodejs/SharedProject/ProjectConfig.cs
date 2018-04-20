@@ -31,10 +31,10 @@ namespace Microsoft.VisualStudioTools.Project
         internal const string Debug = "Debug";
         internal const string AnyCPU = "AnyCPU";
 
-        private ProjectNode project;
+        private readonly ProjectNode project;
         private string configName;
         private MSBuildExecution.ProjectInstance currentConfig;
-        private IVsProjectFlavorCfg flavoredCfg;
+        private readonly IVsProjectFlavorCfg flavoredCfg;
         private List<OutputGroup> outputGroups;
         private BuildableProjectConfig buildableCfg;
         private string platformName;
@@ -128,7 +128,7 @@ namespace Microsoft.VisualStudioTools.Project
             var flavoredCfgProvider = this.ProjectMgr.GetOuterInterface<IVsProjectFlavorCfgProvider>();
             Utilities.ArgumentNotNull(nameof(flavoredCfgProvider), flavoredCfgProvider);
             ErrorHandler.ThrowOnFailure(flavoredCfgProvider.CreateProjectFlavorCfg(this, out this.flavoredCfg));
-            Utilities.ArgumentNotNull(nameof(flavoredCfg), this.flavoredCfg);
+            Utilities.ArgumentNotNull(nameof(this.flavoredCfg), this.flavoredCfg);
 
             // if the flavored object support XML fragment, initialize it
             if (this.flavoredCfg is IPersistXMLFragment persistXML)
@@ -898,8 +898,8 @@ namespace Microsoft.VisualStudioTools.Project
     internal class BuildableProjectConfig : IVsBuildableProjectCfg
     {
         #region fields
-        private ProjectConfig config = null;
-        private EventSinkCollection callbacks = new EventSinkCollection();
+        private readonly ProjectConfig config = null;
+        private readonly EventSinkCollection callbacks = new EventSinkCollection();
         #endregion
 
         #region ctors

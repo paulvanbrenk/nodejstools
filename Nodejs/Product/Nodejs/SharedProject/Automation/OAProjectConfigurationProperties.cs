@@ -435,7 +435,7 @@ namespace Microsoft.VisualStudioTools.Project.Automation
 
             ~HierarchyListener()
             {
-                _hierarchy.UnadviseHierarchyEvents(_cookie);
+                this._hierarchy.UnadviseHierarchyEvents(this._cookie);
             }
 
             #region IVsHierarchyEvents Members

@@ -32,10 +32,10 @@ namespace Microsoft.VisualStudioTools.Project
         private IVsOutputWindowPane outputWindowPane;
         private string errorString = SR.GetString(SR.Error);
         private string warningString = SR.GetString(SR.Warning);
-        private TaskProvider taskProvider;
-        private IVsHierarchy hierarchy;
+        private readonly TaskProvider taskProvider;
+        private readonly IVsHierarchy hierarchy;
         private IServiceProvider serviceProvider;
-        private Dispatcher dispatcher;
+        private readonly Dispatcher dispatcher;
 
         // Queues to manage Tasks and Error output plus message logging
         private ConcurrentQueue<Func<ErrorTask>> taskQueue;

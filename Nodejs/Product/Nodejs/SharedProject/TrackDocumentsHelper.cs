@@ -12,7 +12,7 @@ namespace Microsoft.VisualStudioTools.Project
     internal class TrackDocumentsHelper
     {
         #region fields
-        private ProjectNode projectMgr;
+        private readonly ProjectNode projectMgr;
         #endregion
 
         #region properties

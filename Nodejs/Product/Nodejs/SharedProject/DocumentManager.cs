@@ -14,7 +14,6 @@ namespace Microsoft.VisualStudioTools.Project
     /// <summary>
     /// This abstract class handles opening, saving of items in the hierarchy.
     /// </summary>
-
     internal abstract class DocumentManager
     {
         #region fields

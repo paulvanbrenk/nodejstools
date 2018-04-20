@@ -29,7 +29,7 @@ namespace Microsoft.VisualStudioTools.Project
 
         public bool Browsable => this.browsable;
 
-        private bool browsable;
+        private readonly bool browsable;
     }
 
     /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.VisualStudioTools.Project
         IVsBrowseObject
     {
         #region fields
-        private HierarchyNode node;
+        private readonly HierarchyNode node;
         #endregion
 
         #region properties

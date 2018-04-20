@@ -30,8 +30,8 @@ namespace Microsoft.VisualStudioTools.Project
         internal const string x64Platform = "x64";
         internal const string ARMPlatform = "ARM";
 
-        private EventSinkCollection cfgEventSinks = new EventSinkCollection();
-        private Dictionary<string, ProjectConfig> configurationsList = new Dictionary<string, ProjectConfig>();
+        private readonly EventSinkCollection cfgEventSinks = new EventSinkCollection();
+        private readonly Dictionary<string, ProjectConfig> configurationsList = new Dictionary<string, ProjectConfig>();
 
         public ConfigProvider(ProjectNode manager)
         {

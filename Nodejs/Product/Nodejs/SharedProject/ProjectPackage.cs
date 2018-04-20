@@ -16,7 +16,7 @@ namespace Microsoft.VisualStudioTools.Project
         /// <summary>
         /// This is the place to register all the solution listeners.
         /// </summary>
-        private List<SolutionListener> solutionListeners = new List<SolutionListener>();
+        private readonly List<SolutionListener> solutionListeners = new List<SolutionListener>();
         #endregion
 
         #region properties

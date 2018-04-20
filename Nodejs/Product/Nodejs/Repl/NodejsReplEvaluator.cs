@@ -490,7 +490,7 @@ namespace Microsoft.NodejsTools.Repl
             private readonly NodejsReplEvaluator eval;
             private readonly Process process;
             private readonly object socketLock = new object();
-            private Socket acceptSocket;
+            private readonly Socket acceptSocket;
             public bool connected;
             private TaskCompletionSource<ExecutionResult> completion;
             private string executionText;

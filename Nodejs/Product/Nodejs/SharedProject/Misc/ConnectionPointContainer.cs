@@ -22,7 +22,7 @@ namespace Microsoft.VisualStudioTools.Project
     [ComVisible(true)]
     public class ConnectionPointContainer : IConnectionPointContainer
     {
-        private Dictionary<Guid, IConnectionPoint> connectionPoints;
+        private readonly Dictionary<Guid, IConnectionPoint> connectionPoints;
         internal ConnectionPointContainer()
         {
             this.connectionPoints = new Dictionary<Guid, IConnectionPoint>();
@@ -56,10 +56,10 @@ namespace Microsoft.VisualStudioTools.Project
     internal class ConnectionPoint<SinkType> : IConnectionPoint
         where SinkType : class
     {
-        private Dictionary<uint, SinkType> sinks;
+        private readonly Dictionary<uint, SinkType> sinks;
         private uint nextCookie;
-        private ConnectionPointContainer container;
-        private IEventSource<SinkType> source;
+        private readonly ConnectionPointContainer container;
+        private readonly IEventSource<SinkType> source;
         internal ConnectionPoint(ConnectionPointContainer container, IEventSource<SinkType> source)
         {
             this.container = container ?? throw new ArgumentNullException(nameof(container));

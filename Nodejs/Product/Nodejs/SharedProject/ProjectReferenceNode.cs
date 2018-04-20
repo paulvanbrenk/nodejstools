@@ -17,13 +17,13 @@ namespace Microsoft.VisualStudioTools.Project
         /// </summary>
         private Guid referencedProjectGuid;
 
-        private string referencedProjectName = string.Empty;
+        private readonly string referencedProjectName = string.Empty;
 
-        private string referencedProjectRelativePath = string.Empty;
+        private readonly string referencedProjectRelativePath = string.Empty;
 
-        private string referencedProjectFullPath = string.Empty;
+        private readonly string referencedProjectFullPath = string.Empty;
 
-        private BuildDependency buildDependency;
+        private readonly BuildDependency buildDependency;
 
         /// <summary>
         /// This is a reference to the automation object for the referenced project.

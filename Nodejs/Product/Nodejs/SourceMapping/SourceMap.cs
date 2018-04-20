@@ -18,7 +18,7 @@ namespace Microsoft.NodejsTools.SourceMapping
         private readonly Dictionary<string, object> _mapInfo;
         private readonly LineInfo[] _lines;
         private readonly string[] _names, _sources;
-        private static Dictionary<char, int> _base64Mapping = BuildBase64Mapping();
+        private static readonly Dictionary<char, int> _base64Mapping = BuildBase64Mapping();
 
         /// <summary>
         /// Index into the mappings for the starting column

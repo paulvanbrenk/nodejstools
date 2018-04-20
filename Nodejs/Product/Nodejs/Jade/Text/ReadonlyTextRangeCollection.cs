@@ -8,7 +8,7 @@ namespace Microsoft.NodejsTools.Jade
 {
     internal class ReadOnlyTextRangeCollection<T> : IEnumerable<T>, IEnumerable where T : ITextRange
     {
-        private TextRangeCollection<T> _collection;
+        private readonly TextRangeCollection<T> _collection;
 
         public ReadOnlyTextRangeCollection(TextRangeCollection<T> collection)
         {

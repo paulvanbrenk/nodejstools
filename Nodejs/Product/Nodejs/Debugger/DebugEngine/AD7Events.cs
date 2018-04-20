@@ -53,7 +53,7 @@ namespace Microsoft.NodejsTools.Debugger.DebugEngine
     internal sealed class AD7EngineCreateEvent : AD7AsynchronousEvent, IDebugEngineCreateEvent2
     {
         public const string IID = "FE5B734C-759D-4E59-AB04-F103343BDD06";
-        private IDebugEngine2 m_engine;
+        private readonly IDebugEngine2 m_engine;
 
         private AD7EngineCreateEvent(AD7Engine engine)
         {
@@ -239,8 +239,8 @@ namespace Microsoft.NodejsTools.Debugger.DebugEngine
     {
         public const string IID = "1dddb704-cf99-4b8a-b746-dabb01dd13a0";
 
-        private AD7PendingBreakpoint m_pendingBreakpoint;
-        private AD7BoundBreakpoint m_boundBreakpoint;
+        private readonly AD7PendingBreakpoint m_pendingBreakpoint;
+        private readonly AD7BoundBreakpoint m_boundBreakpoint;
 
         public AD7BreakpointBoundEvent(AD7PendingBreakpoint pendingBreakpoint, AD7BoundBreakpoint boundBreakpoint)
         {
@@ -272,7 +272,7 @@ namespace Microsoft.NodejsTools.Debugger.DebugEngine
     {
         public const string IID = "78d1db4f-c557-4dc5-a2dd-5369d21b1c8c";
 
-        private AD7BoundBreakpoint m_boundBreakpoint;
+        private readonly AD7BoundBreakpoint m_boundBreakpoint;
 
         public AD7BreakpointUnboundEvent(AD7BoundBreakpoint boundBreakpoint)
         {
@@ -300,8 +300,8 @@ namespace Microsoft.NodejsTools.Debugger.DebugEngine
     {
         public const string IID = "abb0ca42-f82b-4622-84e4-6903ae90f210";
 
-        private AD7Engine m_engine;
-        private AD7PendingBreakpoint m_pendingBreakpoint;
+        private readonly AD7Engine m_engine;
+        private readonly AD7PendingBreakpoint m_pendingBreakpoint;
 
         public AD7BreakpointErrorEvent(AD7PendingBreakpoint pendingBreakpoint, AD7Engine engine)
         {
@@ -384,7 +384,7 @@ namespace Microsoft.NodejsTools.Debugger.DebugEngine
     {
         public const string IID = "501C1E21-C557-48B8-BA30-A1EAB0BC4A74";
 
-        private IEnumDebugBoundBreakpoints2 m_boundBreakpoints;
+        private readonly IEnumDebugBoundBreakpoints2 m_boundBreakpoints;
 
         public AD7BreakpointEvent(IEnumDebugBoundBreakpoints2 boundBreakpoints)
         {
@@ -407,7 +407,7 @@ namespace Microsoft.NodejsTools.Debugger.DebugEngine
         public const string IID = "51A94113-8788-4A54-AE15-08B74FF922D0";
         private readonly string _exception, _description;
         private readonly bool _isUnhandled;
-        private AD7Engine _engine;
+        private readonly AD7Engine _engine;
 
         public AD7DebugExceptionEvent(string typeName, string description, bool isUnhandled, AD7Engine engine)
         {

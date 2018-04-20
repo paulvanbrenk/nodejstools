@@ -1,4 +1,4 @@
-// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
+﻿// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 using System;
 using Microsoft.VisualStudio;
@@ -9,8 +9,8 @@ namespace Microsoft.VisualStudioTools.Project
 {
     public class BuildDependency : IVsBuildDependency
     {
-        private Guid referencedProjectGuid = Guid.Empty;
-        private ProjectNode projectMgr = null;
+        private readonly Guid referencedProjectGuid;
+        private readonly ProjectNode projectMgr;
 
         internal BuildDependency(ProjectNode projectMgr, Guid projectReference)
         {
@@ -25,7 +25,7 @@ namespace Microsoft.VisualStudioTools.Project
             return VSConstants.S_OK;
         }
 
-        public int get_Type(out System.Guid guidType)
+        public int get_Type(out Guid guidType)
         {
             // All our dependencies are build projects
             guidType = VSConstants.GUID_VS_DEPTYPE_BUILD_PROJECT;

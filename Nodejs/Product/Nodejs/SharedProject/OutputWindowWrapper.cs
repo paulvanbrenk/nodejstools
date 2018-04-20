@@ -22,7 +22,7 @@ namespace Microsoft.VisualStudioTools.Project
         [Import]
         private SVsServiceProvider ServiceProvider { get; set; }
 
-        private ConcurrentDictionary<OutputWindowTarget, IVsOutputWindowPane> lazyOutputPaneCollection = new ConcurrentDictionary<OutputWindowTarget, IVsOutputWindowPane>();
+        private readonly ConcurrentDictionary<OutputWindowTarget, IVsOutputWindowPane> lazyOutputPaneCollection = new ConcurrentDictionary<OutputWindowTarget, IVsOutputWindowPane>();
 
         private IVsOutputWindowPane InitializeOutputPane(string title, Guid paneId)
         {

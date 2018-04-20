@@ -14,9 +14,9 @@ namespace Microsoft.NodejsTools.Project
         /// <summary>
         /// The caption to display for this node
         /// </summary>
-        private string _caption;
+        private readonly string _caption;
 
-        private NodeModulesNode _parent;
+        private readonly NodeModulesNode _parent;
         private IEnumerable<IPackage> _packages = new List<IPackage>();
 
         public LocalModulesNode(NodejsProjectNode root, NodeModulesNode parent, string caption, string virtualName, DependencyType dependencyType)

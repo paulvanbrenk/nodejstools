@@ -16,7 +16,7 @@ namespace Microsoft.VisualStudioTools.Project
         /// <summary>
         /// The dynamic project who adviced for TrackProjectDocumentsEvents
         /// </summary>
-        private CommonProjectNode _project;
+        private readonly CommonProjectNode _project;
         #endregion
 
         #region ctors

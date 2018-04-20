@@ -11,8 +11,8 @@ namespace Microsoft.VisualStudioTools.Navigation
 {
     internal class HierarchyEventArgs : EventArgs
     {
-        private uint _itemId;
-        private string _fileName;
+        private readonly uint _itemId;
+        private readonly string _fileName;
         private IVsTextLines _buffer;
 
         public HierarchyEventArgs(uint itemId, string canonicalName)
@@ -33,7 +33,7 @@ namespace Microsoft.VisualStudioTools.Navigation
         {
             private IVsHierarchy _hierarchy;
             private uint _cookie;
-            private LibraryManager _manager;
+            private readonly LibraryManager _manager;
 
             public HierarchyListener(IVsHierarchy hierarchy, LibraryManager manager)
             {

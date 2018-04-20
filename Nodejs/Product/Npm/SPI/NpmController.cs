@@ -9,9 +9,9 @@ namespace Microsoft.NodejsTools.Npm.SPI
 {
     internal class NpmController : AbstractNpmLogSource, INpmController
     {
-        private string cachePath;
-        private bool showMissingDevOptionalSubPackages;
-        private INpmPathProvider npmPathProvider;
+        private readonly string cachePath;
+        private readonly bool showMissingDevOptionalSubPackages;
+        private readonly INpmPathProvider npmPathProvider;
         private IRootPackage rootPackage;
         private readonly object packageLock = new object();
 

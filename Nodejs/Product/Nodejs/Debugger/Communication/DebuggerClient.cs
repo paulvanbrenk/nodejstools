@@ -200,7 +200,7 @@ namespace Microsoft.NodejsTools.Debugger.Communication
         {
             var messageId = message["request_seq"];
 
-            if (messageId != null && _messages.TryGetValue((int)messageId, out var promise))
+            if (messageId != null && this._messages.TryGetValue((int)messageId, out var promise))
             {
                 promise.SetResult(message);
             }

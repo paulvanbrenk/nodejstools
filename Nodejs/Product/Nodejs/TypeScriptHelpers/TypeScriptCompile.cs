@@ -11,7 +11,7 @@ namespace Microsoft.NodejsTools.TypeScript
 {
     public static class TypeScriptCompile
     {
-        private static string CompilerExe = "tsc.exe";
+        private const string CompilerExe = "tsc.exe";
 
         public static async Task<bool> CompileFileAsync(string filePath, OutputPaneWrapper outputPane, string workingDir = null)
         {

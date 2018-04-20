@@ -23,7 +23,7 @@ namespace Microsoft.NodejsTools.Jade
         protected ITextBuffer TextBuffer { get; }
         protected bool LineBasedClassification { get; set; }
 
-        private IClassificationContextNameProvider<TTokenClass> _classificationNameProvider;
+        private readonly IClassificationContextNameProvider<TTokenClass> _classificationNameProvider;
 
         private int _lastValidPosition = 0;
 

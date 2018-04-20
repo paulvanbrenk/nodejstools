@@ -15,7 +15,7 @@ namespace Microsoft.VisualStudioTools.Project.Automation
     public abstract class OAReferenceBase : Reference3
     {
         #region fields
-        private ReferenceNode referenceNode;
+        private readonly ReferenceNode referenceNode;
         #endregion
 
         #region ctors

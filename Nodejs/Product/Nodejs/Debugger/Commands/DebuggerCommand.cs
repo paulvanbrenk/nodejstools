@@ -55,10 +55,10 @@ namespace Microsoft.NodejsTools.Debugger.Commands
             return JsonConvert.SerializeObject(
                 new
                 {
-                    command = _commandName,
-                    seq = Id,
+                    command = this._commandName,
+                    seq = this.Id,
                     type = "request",
-                    arguments = Arguments
+                    arguments = this.Arguments
                 });
         }
     }

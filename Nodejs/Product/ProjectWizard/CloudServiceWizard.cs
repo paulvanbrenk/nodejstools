@@ -15,7 +15,7 @@ namespace Microsoft.NodejsTools.ProjectWizard
 {
     public sealed class CloudServiceWizard : IWizard
     {
-        private IWizard _wizard;
+        private readonly IWizard _wizard;
 
         /// <summary>
         /// The settings collection where "Suppress{dialog}" settings are stored
@@ -32,7 +32,7 @@ namespace Microsoft.NodejsTools.ProjectWizard
                 var asm = Assembly.Load("Microsoft.VisualStudio.CloudService.Wizard,Version=1.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a");
 
                 var type = asm.GetType("Microsoft.VisualStudio.CloudService.Wizard.CloudServiceWizard");
-                _wizard = type.InvokeMember(null, BindingFlags.CreateInstance, null, null, new object[0]) as IWizard;
+                this._wizard = type.InvokeMember(null, BindingFlags.CreateInstance, null, null, new object[0]) as IWizard;
             }
             catch (ArgumentException)
             {
@@ -50,41 +50,41 @@ namespace Microsoft.NodejsTools.ProjectWizard
 
         public void BeforeOpeningFile(ProjectItem projectItem)
         {
-            if (_wizard != null)
+            if (this._wizard != null)
             {
-                _wizard.BeforeOpeningFile(projectItem);
+                this._wizard.BeforeOpeningFile(projectItem);
             }
         }
 
         public void ProjectFinishedGenerating(EnvDTE.Project project)
         {
-            if (_wizard != null)
+            if (this._wizard != null)
             {
-                _wizard.ProjectFinishedGenerating(project);
+                this._wizard.ProjectFinishedGenerating(project);
             }
         }
 
         public void ProjectItemFinishedGenerating(ProjectItem projectItem)
         {
-            if (_wizard != null)
+            if (this._wizard != null)
             {
-                _wizard.ProjectItemFinishedGenerating(projectItem);
+                this._wizard.ProjectItemFinishedGenerating(projectItem);
             }
         }
 
         public void RunFinished()
         {
-            if (_wizard != null)
+            if (this._wizard != null)
             {
-                _wizard.RunFinished();
+                this._wizard.RunFinished();
             }
         }
 
         public bool ShouldAddProjectItem(string filePath)
         {
-            if (_wizard != null)
+            if (this._wizard != null)
             {
-                return _wizard.ShouldAddProjectItem(filePath);
+                return this._wizard.ShouldAddProjectItem(filePath);
             }
             return false;
         }
@@ -93,7 +93,7 @@ namespace Microsoft.NodejsTools.ProjectWizard
         {
             var provider = WizardHelpers.GetProvider(automationObject);
 
-            if (_wizard == null)
+            if (this._wizard == null)
             {
                 try
                 {
@@ -114,7 +114,7 @@ namespace Microsoft.NodejsTools.ProjectWizard
             }
 
             // Run the original wizard to get the right replacements
-            _wizard.RunStarted(automationObject, replacementsDictionary, runKind, customParams);
+            this._wizard.RunStarted(automationObject, replacementsDictionary, runKind, customParams);
         }
     }
 }

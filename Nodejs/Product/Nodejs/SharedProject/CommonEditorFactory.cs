@@ -18,7 +18,7 @@ namespace Microsoft.VisualStudioTools.Project
     /// </summary>    
     public abstract class CommonEditorFactory : IVsEditorFactory
     {
-        private Package _package;
+        private readonly Package _package;
         private ServiceProvider _serviceProvider;
         private readonly bool _promptEncodingOnLoad;
 

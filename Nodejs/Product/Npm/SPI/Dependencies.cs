@@ -9,7 +9,7 @@ namespace Microsoft.NodejsTools.Npm.SPI
 {
     internal class Dependencies : IDependencies
     {
-        private IList<Dependency> _dependencyProperties;
+        private readonly IList<Dependency> _dependencyProperties;
 
         public Dependencies(JObject package, params string[] dependencyPropertyNames)
         {

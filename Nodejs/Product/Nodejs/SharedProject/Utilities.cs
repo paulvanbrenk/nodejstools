@@ -124,7 +124,7 @@ namespace Microsoft.VisualStudioTools.Project
             return stringList.ToString().TrimEnd(';');
         }
 
-        private static char[] curlyBraces = new char[] { '{', '}' };
+        private static readonly char[] curlyBraces = new char[] { '{', '}' };
         /// <summary>
         /// Take list of guids as a single string and generate an array of Guids from it
         /// </summary>

@@ -13,7 +13,7 @@ namespace Microsoft.NodejsTools.Debugger.Commands
 {
     internal sealed class SetBreakpointCommand : DebuggerCommand
     {
-        private static string _pathSeperatorCharacterGroup = string.Format(CultureInfo.InvariantCulture, "[{0}{1}]", Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
+        private static readonly string PathSeperatorCharacterGroup = $"[{Path.DirectorySeparatorChar}{Path.AltDirectorySeparatorChar}]";
 
         private readonly Dictionary<string, object> _arguments;
         private readonly NodeBreakpoint _breakpoint;
@@ -127,7 +127,7 @@ namespace Microsoft.NodejsTools.Debugger.Commands
         private static string CreateRemoteScriptRegExp(string filePath)
         {
             var fileName = Path.GetFileName(filePath) ?? string.Empty;
-            var start = fileName == filePath ? "^" : _pathSeperatorCharacterGroup;
+            var start = fileName == filePath ? "^" : PathSeperatorCharacterGroup;
             return string.Format(CultureInfo.InvariantCulture, "{0}{1}$", start, CreateCaseInsensitiveRegExpFromString(fileName));
         }
 

@@ -8,7 +8,7 @@ namespace Microsoft.NodejsTools.Jade
     /// <typeparam name="T">Token type (typically enum)</typeparam>
     internal class Token<T> : TextRange, IToken<T>
     {
-        private T _tokenType;
+        private readonly T _tokenType;
 
         /// <summary>
         /// Create token based on type and text range

@@ -23,7 +23,7 @@ namespace Microsoft.VisualStudioTools.Project
         /// <summary>
         /// The msbuild engine that we are going to use.
         /// </summary>
-        private MSBuild.ProjectCollection buildEngine;
+        private readonly MSBuild.ProjectCollection buildEngine;
 
         /// <summary>
         /// The msbuild project for the project file.

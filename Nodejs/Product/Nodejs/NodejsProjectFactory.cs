@@ -9,7 +9,7 @@ namespace Microsoft.NodejsTools
     [Guid(Guids.NodejsProjectFactoryString)]
     internal class NodejsProjectFactory : FlavoredProjectFactoryBase
     {
-        private NodejsPackage _package;
+        private readonly NodejsPackage _package;
 
         public NodejsProjectFactory(NodejsPackage package)
         {

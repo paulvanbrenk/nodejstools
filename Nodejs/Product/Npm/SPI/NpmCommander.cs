@@ -11,7 +11,7 @@ namespace Microsoft.NodejsTools.Npm.SPI
     {
         private class NmpCommandRunner : IDisposable
         {
-            private NpmCommander commander;
+            private readonly NpmCommander commander;
             private NpmCommand command;
 
             public static async Task<bool> ExecuteAsync(NpmCommander commander, NpmCommand command)
